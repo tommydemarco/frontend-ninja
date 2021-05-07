@@ -10,7 +10,7 @@ import {
   IonTabs,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { statsChartOutline, gridOutline, personOutline } from 'ionicons/icons';
+import { statsChartOutline, gridOutline, personOutline, diamondOutline } from 'ionicons/icons';
 // context
 import { appContext } from "./context/app";
 // pages
@@ -34,6 +34,9 @@ import '@ionic/react/css/text-transformation.css';
 import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 
+/* customizes iconic standard styles */
+import './theme/ionic-components-styles.scss';
+
 /* Theme variables */
 import './theme/variables.css';
 
@@ -52,6 +55,9 @@ const App: React.FC = () => {
               <Route exact path="/charts">
                 <Charts />
               </Route>
+              <Route path="/deals">
+                <Profile />
+              </Route>
               <Route path="/profile">
                 <Profile />
               </Route>
@@ -67,6 +73,10 @@ const App: React.FC = () => {
               <IonTabButton tab="charts" href="/charts">
                 <IonIcon icon={statsChartOutline} />
                 <IonLabel>Charts</IonLabel>
+              </IonTabButton>
+              <IonTabButton tab="deals" href="/deals">
+                <IonIcon icon={diamondOutline} />
+                <IonLabel>Deals</IonLabel>
               </IonTabButton>
               <IonTabButton tab="profile" href="/profile">
                 <IonIcon icon={personOutline} />

@@ -9,6 +9,10 @@ http://ionicframework.com/docs/theming/ */
   --color-white: white;
   --color-light-grey: #f5f6fa;
 
+  /** dimensions */
+  --icon-big: 35px;
+  --icon-small: 30px;
+
 
   /** primary **/
   --ion-color-primary: #273c75;

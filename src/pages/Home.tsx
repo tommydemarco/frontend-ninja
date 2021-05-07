@@ -1,5 +1,5 @@
 import { IonContent, IonHeader, IonIcon, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import { schoolOutline, locateOutline, hourglassOutline, bugOutline } from 'ionicons/icons';
+import { schoolOutline, locateOutline, hourglassOutline, bugOutline, medalOutline } from 'ionicons/icons';
 // components
 import ContentContainer from '../components/ContentContainer';
 import OptionCard from "../components/OptionCard"
@@ -25,6 +25,9 @@ const Tab1: React.FC = () => {
           </OptionCard>
           <OptionCard title="Bugfix Mode" subtitle="Test your bug-fixing skills and fix the mistakes">
             <IonIcon icon={bugOutline} />
+          </OptionCard>
+          <OptionCard title="Your Medals" subtitle="Lorem ipsum dolor sit amet consectetur adipiscing">
+            <IonIcon icon={medalOutline} />
           </OptionCard>
         </ContentContainer>
       </IonContent>
