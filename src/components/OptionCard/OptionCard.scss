@@ -1,0 +1,42 @@
+.option-card {
+    display: flex;
+    align-items: flex-start;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--color-white);
+    box-shadow: -1px 1px 15px 5px rgba(0,0,0,0.10);
+    margin-bottom: 20px;
+
+    &__icon-container {
+        width: 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--color-black-light);
+        align-self: stretch;
+        flex-shrink: 0;
+
+        ion-icon {
+            font-size: 35px;
+            color: var(--color-white)
+        }
+    }
+
+    &__content {
+        padding: 15px;
+    }
+
+    &__title {
+        margin: 0 0 7px;
+        color: var(--color-black);
+    }
+
+    &__subtitle {
+        color: var(--color-black-light);
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
