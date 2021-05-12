@@ -5,3 +5,12 @@ ion-tab-bar {
         font-size: var(--icon-small);
     }
 }
+
+ion-title {
+    text-transform: capitalize;
+}
+
+h1, h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+}

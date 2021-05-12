@@ -17,13 +17,13 @@ const Tab1: React.FC = () => {
           <OptionCard path="/mode/quizzes" title="Quizzes" subtitle="Test your knowledge and have fun with the quizzes">
             <IonIcon icon={schoolOutline} />
           </OptionCard>
-          <OptionCard path="/mode/sniper" title="Sniper Mode" subtitle="Show the world who the real Frontend Monster is!">
+          <OptionCard path="/mode/sniper-mode" title="Sniper Mode" subtitle="Show the world who the real Frontend Monster is!">
             <IonIcon icon={locateOutline} />
           </OptionCard>
           <OptionCard path="/mode/time-challenge" title="Time Challenge" subtitle="Beat the clock and rise in the global charts">
             <IonIcon icon={hourglassOutline} />
           </OptionCard>
-          <OptionCard path="/mode/bugfix" title="Bugfix Mode" subtitle="Test your bug-fixing skills and fix the mistakes">
+          <OptionCard path="/mode/bugfix-mode" title="Bugfix Mode" subtitle="Test your bug-fixing skills and fix the mistakes">
             <IonIcon icon={bugOutline} />
           </OptionCard>
           <OptionCard path="/medals" title="Your Medals" subtitle="Lorem ipsum dolor sit amet consectetur adipiscing">

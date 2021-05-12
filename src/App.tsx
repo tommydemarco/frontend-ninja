@@ -17,6 +17,7 @@ import { appContext } from "./context/app";
 import Home from './pages/Home';
 import Charts from './pages/Charts';
 import Profile from './pages/Profile';
+import Mode from './pages/Mode';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -49,10 +50,10 @@ const App: React.FC = () => {
         <IonReactRouter>
           <IonTabs>
             <IonRouterOutlet>
-              <Route exact path="/home">
+              <Route path="/home">
                 <Home />
               </Route>
-              <Route exact path="/charts">
+              <Route path="/charts">
                 <Charts />
               </Route>
               <Route path="/deals">
@@ -63,6 +64,9 @@ const App: React.FC = () => {
               </Route>
               <Route exact path="/">
                 <Redirect to="/home" />
+              </Route>
+              <Route path="/mode/:modeSlug">
+                <Mode />
               </Route>
             </IonRouterOutlet>
             <IonTabBar slot="bottom" color="primary">

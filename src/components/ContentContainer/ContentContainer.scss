@@ -2,4 +2,8 @@
     padding: 25px 20px;
     display: flex;
     flex-direction: column;
+
+    &--text-center {
+        text-align: center;
+    }
 }

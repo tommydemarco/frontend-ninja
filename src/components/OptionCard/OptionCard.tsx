@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 import RiplleOverlay from "../RippleClickOverlay"
 
 import "./OptionCard.scss";
@@ -11,8 +11,14 @@ interface TeaserProps {
 }
 
 const Teaser: React.FC<TeaserProps> = ({ title, subtitle, children, path }) => {
+    const history = useHistory() 
+
+    const goToPage = () => {
+        history.push(path)
+    }
+
     return (
-        <Link to={path} className="option-card">
+        <div className="option-card" onClick={goToPage}>
             <div className="option-card__icon-container">
                 {children}
             </div>
@@ -22,7 +28,7 @@ const Teaser: React.FC<TeaserProps> = ({ title, subtitle, children, path }) => {
                     <span className="option-card__subtitle">{subtitle}</span>
                 </div>
             </RiplleOverlay>
-        </Link>
+        </div>
     )
 }
 
