@@ -9,24 +9,24 @@ const Tab1: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar color="primary">
-          <IonTitle>Home </IonTitle>
+          <IonTitle>Home</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <ContentContainer>
-          <OptionCard title="Quizzes" subtitle="Test your knowledge and have fun with the quizzes">
+          <OptionCard path="/mode/quizzes" title="Quizzes" subtitle="Test your knowledge and have fun with the quizzes">
             <IonIcon icon={schoolOutline} />
           </OptionCard>
-          <OptionCard title="Sniper Mode" subtitle="Show the world who the real Frontend Monster is!">
+          <OptionCard path="/mode/sniper" title="Sniper Mode" subtitle="Show the world who the real Frontend Monster is!">
             <IonIcon icon={locateOutline} />
           </OptionCard>
-          <OptionCard title="Time Challenge" subtitle="Beat the clock and rise in the global charts">
+          <OptionCard path="/mode/time-challenge" title="Time Challenge" subtitle="Beat the clock and rise in the global charts">
             <IonIcon icon={hourglassOutline} />
           </OptionCard>
-          <OptionCard title="Bugfix Mode" subtitle="Test your bug-fixing skills and fix the mistakes">
+          <OptionCard path="/mode/bugfix" title="Bugfix Mode" subtitle="Test your bug-fixing skills and fix the mistakes">
             <IonIcon icon={bugOutline} />
           </OptionCard>
-          <OptionCard title="Your Medals" subtitle="Lorem ipsum dolor sit amet consectetur adipiscing">
+          <OptionCard path="/medals" title="Your Medals" subtitle="Lorem ipsum dolor sit amet consectetur adipiscing">
             <IonIcon icon={medalOutline} />
           </OptionCard>
         </ContentContainer>
