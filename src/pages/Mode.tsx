@@ -3,7 +3,7 @@ import { IonContent, IonHeader, IonPage, IonIcon, IonTitle, IonToolbar, IonButto
 
 import ContentContainer from "../components/ContentContainer"
 import FlexContainer from "../components/FlexContainer";
-import OptionCard from "../components/OptionCard"
+import CategoryCard from "../components/CategoryCard"
 
 import { modesCategory, ModeCategories } from "../data/modes-categories"
 
@@ -31,11 +31,9 @@ const Tab3: React.FC = (props) => {
           <FlexContainer>
             {categories?.map((item: ModeCategories) => {
               return (
-                <OptionCard path={"modes"} key={item.path} 
-                            vertical={true} title={item.category}
-                >
+                <CategoryCard path={"modes"} key={item.path} label={item.category}>
                     <IonIcon icon={item.icon} />
-                </OptionCard>
+                </CategoryCard>
               )
             })}
           </FlexContainer>

@@ -10,6 +10,7 @@ http://ionicframework.com/docs/theming/ */
   --color-light-grey: #f5f6fa;
 
   /** dimensions */
+  --icon-biggest: 45px;
   --icon-big: 35px;
   --icon-small: 30px;
 

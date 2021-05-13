@@ -1,0 +1,23 @@
+.category-card {
+  position: relative;
+  background-color: var(--color-black-light);
+  box-shadow: -1px 1px 15px 5px rgba(0,0,0,0.10);
+  padding: 35px 20px 37px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  
+  ion-icon {
+    font-size: var(--icon-biggest);
+    color: var(--color-white);
+  }
+
+  &__label {
+    padding: 10px;
+    border-radius: 5px;
+    position: absolute;
+    right: -3px;
+    bottom: -3px;
+    background-color: var(--color-white);
+    box-shadow: -1px 1px 15px 5px rgba(0,0,0,0.10);
+  }
+}

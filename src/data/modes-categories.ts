@@ -1,4 +1,4 @@
-import { schoolOutline } from "ionicons/icons";
+import { planet, logoCss3, logoAngular, logoReact, logoVue, logoJavascript } from "ionicons/icons";
 
 export interface ModeCategories {
   category: string;
@@ -13,11 +13,11 @@ export interface ModesCategories {
 
 export const modesCategory = {
   quizzes: [
-    { category: "CSS", icon: schoolOutline, path: "css", },
-    { category: "JS", icon: schoolOutline, path: "js", },
-    { category: "React", icon: schoolOutline, path: "react",},
-    { category: "Vue", icon: schoolOutline, path: "vue",},
-    { category: "Angular", icon: schoolOutline, path: "angular",},
-    { category: "All", icon: schoolOutline, path: "all", },
+    { category: "CSS", icon: logoCss3, path: "css", },
+    { category: "JS", icon: logoJavascript, path: "js", },
+    { category: "React", icon: logoReact, path: "react",},
+    { category: "Vue", icon: logoVue, path: "vue",},
+    { category: "Angular", icon: logoAngular, path: "angular",},
+    { category: "All", icon: planet, path: "all", },
   ]
 }

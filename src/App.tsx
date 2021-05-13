@@ -2,15 +2,21 @@ import { useContext } from "react"
 import { Redirect, Route } from 'react-router-dom';
 import {
   IonApp,
+  IonContent,
   IonIcon,
+  IonItem,
   IonLabel,
+  IonList,
+  IonMenu,
   IonRouterOutlet,
   IonTabBar,
   IonTabButton,
   IonTabs,
+  IonTitle,
+  IonToolbar,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { statsChartOutline, gridOutline, personOutline, diamondOutline } from 'ionicons/icons';
+import { statsChartOutline, gridOutline, personOutline, diamondOutline, logOutOutline } from 'ionicons/icons';
 // context
 import { appContext } from "./context/app";
 // pages
@@ -48,8 +54,21 @@ const App: React.FC = () => {
   return (
     <IonApp>
         <IonReactRouter>
+          <IonMenu contentId="main">
+            <IonToolbar>
+              <IonTitle>Menu</IonTitle>
+            </IonToolbar>
+            <IonContent>
+              <IonList>
+                <IonItem button routerLink="/logout">
+                  <IonIcon slot="start" icon={logOutOutline} />
+                  <IonLabel>Logout</IonLabel>
+                </IonItem>
+              </IonList>
+            </IonContent>
+          </IonMenu>
           <IonTabs>
-            <IonRouterOutlet>
+            <IonRouterOutlet id="main">
               <Route path="/home">
                 <Home />
               </Route>
