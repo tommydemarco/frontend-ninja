@@ -5,20 +5,24 @@ import "./OptionCard.scss";
 
 interface TeaserProps {
     title: string,
-    subtitle: string,
+    subtitle?: string,
     children: React.ReactNode,
-    path: string
+    path: string,
+    vertical?: boolean,
 }
 
-const Teaser: React.FC<TeaserProps> = ({ title, subtitle, children, path }) => {
+const Teaser: React.FC<TeaserProps> = ({ title, subtitle, children, path, vertical }) => {
     const history = useHistory() 
 
     const goToPage = () => {
         history.push(path)
     }
 
+    const classes = ["option-card"]
+    if (vertical) classes.push("option-card--vertical")
+
     return (
-        <div className="option-card" onClick={goToPage}>
+        <div className={classes.join(" ")} onClick={goToPage}>
             <div className="option-card__icon-container">
                 {children}
             </div>

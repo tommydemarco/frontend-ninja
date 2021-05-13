@@ -40,4 +40,18 @@
     &:last-child {
         margin-bottom: 0;
     }
+
+    &--vertical {
+        flex-direction: column;
+        text-align: left;
+
+        &:last-child {
+            margin-bottom: 20px;
+        }
+
+        .option-card__icon-container {
+            width: 100%;
+            padding: 15px;
+        }
+    }
 }

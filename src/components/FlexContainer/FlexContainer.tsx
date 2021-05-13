@@ -11,3 +11,5 @@ const FlexContainer: React.FC<FlexContainerProps> = ({ children }) => {
     </div>
   )
 }
+
+export default FlexContainer;
