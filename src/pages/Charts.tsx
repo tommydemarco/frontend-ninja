@@ -1,6 +1,23 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { useState } from "react"
+import {
+  IonPage,
+  IonHeader,
+  IonContent,
+  IonIcon,
+  IonLabel,
+  IonSegment,
+  IonSegmentButton,
+  IonTitle,
+  IonToolbar,
+} from '@ionic/react';
 
-const Tab2: React.FC = () => {
+import ContentConteiner from "../components/ContentContainer"
+import Chart from "../components/Chart"
+
+const Charts: React.FC = () => {
+
+  const [ activeChart, setActiveChart ] = useState<string>("sniper-mode")
+
   return (
     <IonPage>
       <IonHeader>
@@ -8,15 +25,24 @@ const Tab2: React.FC = () => {
           <IonTitle>Charts</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Tab 2</IonTitle>
-          </IonToolbar>
-        </IonHeader>
+      <IonContent fullscreen>   
+        <IonSegment scrollable={true} onIonChange={e => setActiveChart(e.detail.value!)} value={activeChart}>
+          <IonSegmentButton value="sniper-mode">
+            <IonLabel>Sniper mode</IonLabel>
+          </IonSegmentButton>
+          <IonSegmentButton value="time-challenge">
+            <IonLabel>Time Challenge</IonLabel>
+          </IonSegmentButton>
+          <IonSegmentButton value="bugfix-mode">
+            <IonLabel>Bugfix mode</IonLabel>
+          </IonSegmentButton>
+        </IonSegment>
+        <ContentConteiner>
+          <Chart mode={activeChart} />
+        </ContentConteiner>
       </IonContent>
     </IonPage>
   );
 };
 
-export default Tab2;
+export default Charts;
