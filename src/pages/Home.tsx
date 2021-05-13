@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonIcon, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonHeader, IonIcon, IonPage, IonTitle, IonToolbar, IonButtons, IonMenuButton } from '@ionic/react';
 import { schoolOutline, locateOutline, hourglassOutline, bugOutline, medalOutline } from 'ionicons/icons';
 // components
 import ContentContainer from '../components/ContentContainer';
@@ -10,6 +10,9 @@ const Tab1: React.FC = () => {
       <IonHeader>
         <IonToolbar color="primary">
           <IonTitle>Home</IonTitle>
+          <IonButtons slot="end">
+            <IonMenuButton />
+          </IonButtons>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>

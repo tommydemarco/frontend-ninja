@@ -4,13 +4,13 @@ import "./LoadingSpinner.scss"
 
 interface LoadingSpinnerProps {
   color: string;
-  inline: boolean;
+  centered?: boolean; 
 }
 
-const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({ color, inline }) => {
+const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({ color, centered }) => {
 
   const classes = ["loading-spinner"]
-  if (inline) classes.push("loading-spinner--inline")
+  if (centered) classes.push("loading-spinner--centered")
   
   return (
     <div className={classes.join(" ")}>
@@ -18,3 +18,5 @@ const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({ color, inline }) => {
     </div>
   )
 }
+
+export default LoadingSpinner;

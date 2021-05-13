@@ -9,6 +9,8 @@ import {
   IonSegmentButton,
   IonTitle,
   IonToolbar,
+  IonButtons,
+  IonMenuButton,
 } from '@ionic/react';
 
 import ContentConteiner from "../components/ContentContainer"
@@ -23,6 +25,9 @@ const Charts: React.FC = () => {
       <IonHeader>
         <IonToolbar color="primary">
           <IonTitle>Charts</IonTitle>
+          <IonButtons slot="end">
+            <IonMenuButton/>
+          </IonButtons>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>   

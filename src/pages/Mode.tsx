@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import { IonContent, IonHeader, IonPage, IonIcon, IonTitle, IonToolbar, IonButtons, IonBackButton } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonIcon, IonTitle, IonMenuButton, IonToolbar, IonButtons, IonBackButton } from '@ionic/react';
 
 import ContentContainer from "../components/ContentContainer"
 import FlexContainer from "../components/FlexContainer";
@@ -21,6 +21,9 @@ const Tab3: React.FC = (props) => {
         <IonToolbar color="primary">
           <IonButtons slot="start">
             <IonBackButton defaultHref="/" />
+          </IonButtons>
+          <IonButtons slot="end">
+            <IonMenuButton/>
           </IonButtons>
           <IonTitle>{title}</IonTitle>
         </IonToolbar>

@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonMenuButton } from '@ionic/react';
 
 const Tab3: React.FC = () => {
   return (
@@ -6,6 +6,9 @@ const Tab3: React.FC = () => {
       <IonHeader>
         <IonToolbar color="primary">
           <IonTitle>Profile</IonTitle>
+          <IonButtons slot="end">
+            <IonMenuButton/>
+          </IonButtons>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
