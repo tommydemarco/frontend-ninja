@@ -10,7 +10,7 @@ import {
   IonToolbar,
 } from '@ionic/react';
 
-import { logOut, documentText, lockClosed, barChart, megaphone, heartCircle } from "ionicons/icons"
+import { logOut, documentText, lockClosed, barChart, codeSlash, megaphone, heartCircle } from "ionicons/icons"
 
 import ContentContainer from "../ContentContainer";
 
@@ -47,6 +47,12 @@ const SideMenu = () => {
               <IonItem button routerLink="/logout">
                 <IonIcon slot="start" icon={megaphone} color="primary" />
                 <IonLabel>Ask for feature</IonLabel>
+              </IonItem>
+            </IonMenuToggle>
+            <IonMenuToggle>
+              <IonItem button>
+                <IonIcon slot="start" icon={codeSlash} color="primary" />
+                <IonLabel>Frontend News</IonLabel>
               </IonItem>
             </IonMenuToggle>
           </IonList>
