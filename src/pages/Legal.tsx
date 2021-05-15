@@ -9,8 +9,8 @@ import { legalContent } from "../data/legal-content"
 
 const Legal = () => {
 
-  const { page } = useParams<{ page: "termsOfUse" | "privacy" }>();
-  const title = page.replace("-", " ").toUpperCase();
+  const { page } = useParams<{ page: "terms-of-use" | "privacy" }>();
+  const title = page.replace("-", " ").replace("-", " ")
 
   const [ content, setContent ] = useState<string[]>()
 
@@ -26,7 +26,7 @@ const Legal = () => {
             <IonBackButton />
           </IonButtons>
           <IonTitle>
-            {title.toUpperCase()}
+            {title}
           </IonTitle>
           <IonButtons slot="end">
             <IonMenuButton />

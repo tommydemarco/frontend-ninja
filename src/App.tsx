@@ -19,6 +19,8 @@ import Charts from './pages/Charts';
 import Profile from './pages/Profile';
 import Mode from './pages/Mode';
 import Logout from "./pages/Logout";
+import Legal from "./pages/Legal";
+// components
 import SideMenu from "./components/SideMenu"
 
 /* Core CSS required for Ionic components to work properly */
@@ -53,6 +55,9 @@ const App: React.FC = () => {
           <SideMenu />
           <IonTabs>
             <IonRouterOutlet id="main">
+              <Route path="/legal/:page">
+                <Legal />
+              </Route>
               <Route path="/logout">
                 <Logout />
               </Route>

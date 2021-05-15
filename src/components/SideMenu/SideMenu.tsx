@@ -53,13 +53,13 @@ const SideMenu = () => {
           <div className="side-menu__legal-container">
             <IonList>
               <IonMenuToggle>
-                <IonItem button routerLink="/logout">
+                <IonItem button routerLink="/legal/privacy">
                   <IonIcon slot="start" icon={lockClosed} color="primary" />
                   <IonLabel>Privacy Policy</IonLabel>
                 </IonItem>
               </IonMenuToggle> 
               <IonMenuToggle>
-                <IonItem button routerLink="/logout">
+                <IonItem button routerLink="/legal/terms-of-use">
                   <IonIcon slot="start" icon={documentText} color="primary" />
                   <IonLabel>Terms of Use</IonLabel>
                 </IonItem>
