@@ -8,6 +8,7 @@ import {
   IonLabel,
   IonList,
   IonMenu,
+  IonMenuToggle,
   IonRouterOutlet,
   IonTabBar,
   IonTabButton,
@@ -60,10 +61,12 @@ const App: React.FC = () => {
             </IonToolbar>
             <IonContent>
               <IonList>
-                <IonItem button routerLink="/logout">
-                  <IonIcon slot="start" icon={logOutOutline} />
-                  <IonLabel>Logout</IonLabel>
-                </IonItem>
+                <IonMenuToggle>
+                  <IonItem button routerLink="/logout">
+                    <IonIcon slot="start" icon={logOutOutline} />
+                    <IonLabel>Logout</IonLabel>
+                  </IonItem>
+                </IonMenuToggle> 
               </IonList>
             </IonContent>
           </IonMenu>

@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
-import { IonItem, IonList, IonIcon, IonLabel } from "@ionic/react";
+import { IonList, IonIcon } from "@ionic/react";
 import { trophy, medal } from "ionicons/icons"
 
+import ChartElement from "../ChartElement"
 import LoadingSpinner from "../LoadingSpinner"
 import "./Chart.scss"
 
@@ -43,19 +44,17 @@ const Chart: React.FC<ChartProps> = ({ mode }) => {
   }
 
   return (
-    <IonList className="ion-no-padding">
+    <React.Fragment>
         {
           data.map((data, index) => {
             return (
-              <IonItem>
+              <ChartElement username={data.username} points={data.points}>
                 <IonIcon slot="start" icon={assignChartItemIcon(index)} style={{color: assignIconColor(index), fontSize: "30px"}} />
-                <IonLabel>{data.username}</IonLabel>
-                <IonLabel slot="end">{data.points}</IonLabel>
-              </IonItem>
+              </ChartElement>
             )
           })
         }
-    </IonList>
+    </React.Fragment>
   )
 }
 

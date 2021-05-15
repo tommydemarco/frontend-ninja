@@ -42,7 +42,7 @@ const Charts: React.FC = () => {
             <IonLabel>Bugfix mode</IonLabel>
           </IonSegmentButton>
         </IonSegment>
-        <ContentConteiner>
+        <ContentConteiner>  
           <Chart mode={activeChart} />
         </ContentConteiner>
       </IonContent>
