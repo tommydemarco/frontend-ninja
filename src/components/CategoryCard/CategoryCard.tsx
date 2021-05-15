@@ -6,21 +6,23 @@ interface CategoryCardProps {
   children: React.ReactNode;
   label: string;
   path: string;
+  setPrompt: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const CategoryCard: React.FC<CategoryCardProps> = ({ children, label, path }) => {
+const CategoryCard: React.FC<CategoryCardProps> = ({ setPrompt, children, label, path }) => {
 
   const history = useHistory()
 
-  const goToQuiz = () => {
-    //add the popup logic
-    history.push(path)
+  const handleClick = () => {
+    //add the prompt showing logic
+    setPrompt(true);
+    //history.push(path)
   }
 
   const classes = ["category-card"]
 
   return (
-    <div className={classes.join(" ")} onClick={goToQuiz}>
+    <div className={classes.join(" ")} onClick={handleClick}>
       {children}
       <span className="category-card__label">
         {label}

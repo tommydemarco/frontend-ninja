@@ -1,1 +1,1 @@
-export { default } from "./StarterPrompt"
+export { default } from "./StarterPrompt" ;

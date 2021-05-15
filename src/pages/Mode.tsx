@@ -1,9 +1,11 @@
+import { useState } from "react"
 import { useParams } from "react-router-dom"
 import { IonContent, IonHeader, IonPage, IonIcon, IonTitle, IonMenuButton, IonToolbar, IonButtons, IonBackButton } from '@ionic/react';
 
 import ContentContainer from "../components/ContentContainer"
 import FlexContainer from "../components/FlexContainer";
-import CategoryCard from "../components/CategoryCard"
+import CategoryCard from "../components/CategoryCard";
+import StarterPrompt from "../components/StarterPrompt";
 
 import { modesCategory, ModeCategories } from "../data/modes-categories"
 
@@ -11,6 +13,8 @@ const Tab3: React.FC = (props) => {
   const { modeSlug } = useParams<{ modeSlug: string }>()
   
   const title = modeSlug.replace("-", " ")
+
+  const [ promptActive, setPromptActive ] = useState(false)
 
   //@ts-ignore
   const categories = modesCategory[modeSlug]
@@ -34,12 +38,13 @@ const Tab3: React.FC = (props) => {
           <FlexContainer>
             {categories?.map((item: ModeCategories) => {
               return (
-                <CategoryCard path={"modes"} key={item.path} label={item.category}>
+                <CategoryCard setPrompt={setPromptActive} path={item.path} key={item.path} label={item.category}>
                     <IonIcon icon={item.icon} />
                 </CategoryCard>
               )
             })}
           </FlexContainer>
+          <StarterPrompt active={promptActive} setPrompt={setPromptActive} />
         </ContentContainer>
       </IonContent>
     </IonPage>   
