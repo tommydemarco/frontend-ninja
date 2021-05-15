@@ -1,5 +1,4 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonMenuButton } from '@ionic/react';
-import { profile } from 'node:console';
 
 import ContentContainer from "../components/ContentContainer";
 import ProfileInfo from "../components/ProfileInfo";

@@ -2,22 +2,15 @@ import { useContext } from "react"
 import { Redirect, Route } from 'react-router-dom';
 import {
   IonApp,
-  IonContent,
   IonIcon,
-  IonItem,
   IonLabel,
-  IonList,
-  IonMenu,
-  IonMenuToggle,
   IonRouterOutlet,
   IonTabBar,
   IonTabButton,
   IonTabs,
-  IonTitle,
-  IonToolbar,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { statsChartOutline, gridOutline, personOutline, diamondOutline, logOutOutline } from 'ionicons/icons';
+import { statsChartOutline, gridOutline, personOutline, diamondOutline } from 'ionicons/icons';
 // context
 import { appContext } from "./context/app";
 // pages
@@ -26,6 +19,7 @@ import Charts from './pages/Charts';
 import Profile from './pages/Profile';
 import Mode from './pages/Mode';
 import Logout from "./pages/Logout";
+import SideMenu from "./components/SideMenu"
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -56,21 +50,7 @@ const App: React.FC = () => {
   return (
     <IonApp>
         <IonReactRouter>
-          <IonMenu contentId="main">
-            <IonToolbar>
-              <IonTitle>Menu</IonTitle>
-            </IonToolbar>
-            <IonContent>
-              <IonList>
-                <IonMenuToggle>
-                  <IonItem button routerLink="/logout">
-                    <IonIcon slot="start" icon={logOutOutline} />
-                    <IonLabel>Logout</IonLabel>
-                  </IonItem>
-                </IonMenuToggle> 
-              </IonList>
-            </IonContent>
-          </IonMenu>
+          <SideMenu />
           <IonTabs>
             <IonRouterOutlet id="main">
               <Route path="/logout">
