@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { IonList, IonIcon } from "@ionic/react";
+import { IonIcon } from "@ionic/react";
 import { trophy, medal } from "ionicons/icons"
 
 import ChartElement from "../ChartElement"

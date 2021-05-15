@@ -1,5 +1,8 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonMenuButton } from '@ionic/react';
 
+import ContentContainer from "../components/ContentContainer";
+import ProfileInfo from "../components/ProfileInfo";
+
 const Tab3: React.FC = () => {
   return (
     <IonPage>
@@ -12,6 +15,9 @@ const Tab3: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
+        <ContentContainer>
+          <ProfileInfo imageSrc="" imageAlt="" username="" description="" />
+        </ContentContainer>
       </IonContent>
     </IonPage>
   );

@@ -9,4 +9,8 @@ export const chartData = [
   { username: "Phoebey", points: 1508 },
   { username: "Janice", points: 1302 },
   { username: "Gunther", points: 976 },
+  { username: "Bob Geller", points: 675 },
+  { username: "Sandra Bing", points: 453 },
+  { username: "Drake Ramore", points: 354 },
+  { username: "Marcel", points: 301 },
 ]
