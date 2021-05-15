@@ -1,11 +1,11 @@
 .category-card {
   position: relative;
   background-color: var(--color-black-light);
-  box-shadow: -1px 1px 15px 5px rgba(0,0,0,0.10);
+  box-shadow: -1px 1px 15px 5px rgba(0, 0, 0, 0.1);
   padding: 35px 20px 37px;
   border-radius: 5px;
-  margin-bottom: 20px;
-  
+  margin-bottom: 23px;
+
   ion-icon {
     font-size: var(--icon-biggest);
     color: var(--color-white);
@@ -18,6 +18,6 @@
     right: -3px;
     bottom: -3px;
     background-color: var(--color-white);
-    box-shadow: -1px 1px 15px 5px rgba(0,0,0,0.10);
+    box-shadow: -1px 1px 15px 5px rgba(0, 0, 0, 0.1);
   }
 }
