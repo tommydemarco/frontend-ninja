@@ -1,7 +1,11 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonMenuButton } from '@ionic/react';
+import { profile } from 'node:console';
 
 import ContentContainer from "../components/ContentContainer";
 import ProfileInfo from "../components/ProfileInfo";
+
+
+import { profileData } from "../data/profile-data"
 
 const Tab3: React.FC = () => {
   return (
@@ -16,7 +20,7 @@ const Tab3: React.FC = () => {
       </IonHeader>
       <IonContent fullscreen>
         <ContentContainer>
-          <ProfileInfo imageSrc="" imageAlt="" username="" description="" />
+          <ProfileInfo {...profileData} />
         </ContentContainer>
       </IonContent>
     </IonPage>

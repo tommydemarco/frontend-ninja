@@ -1,4 +1,4 @@
-import { IonGrid, IonRow } from "@ionic/react";
+import { IonCol, IonGrid, IonRow, IonButton } from "@ionic/react";
 import "./ProfileInfo.scss"
 
 interface ProfileInfoProps {
@@ -14,20 +14,23 @@ const ProfileInfo: React.FC<ProfileInfoProps> = ({ imageSrc, imageAlt, username,
     <div className="profile-info">
       <IonGrid>
         <IonRow>
-          <div className="profile-info__img-container">
-            <img src={imageSrc} alt={imageAlt} />
-          </div>
-          <div className="profile-info__content">
+          <IonCol>
+            <img src={imageSrc} alt={imageAlt} className="profile-info__image" />
+          </IonCol>  
+          <IonCol>
             <h3 className="profile-info__username">
               {username}
             </h3>
             <span className="profile-info__email">
               {email}
             </span>
-          </div>
+            <IonButton className="profile-info__edit">
+              Edit profile
+            </IonButton>
+          </IonCol>
         </IonRow>
         <IonRow>
-          <span className="profile-info__descritpion">
+          <span className="profile-info__description">
             {description}
           </span>
         </IonRow>

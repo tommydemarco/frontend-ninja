@@ -1,0 +1,23 @@
+.profile-info {
+  &__image {
+    border-radius: 100%;
+  }
+
+  &__username {
+    margin: 5px;
+  }
+
+  &__email {
+    margin-left: 5px;
+    padding-bottom: 10px;
+  }
+
+  &__edit {
+    margin-top: 10px;
+    margin-left: 5px;
+  }
+
+  &__description {
+    margin-top: 15px;
+  }
+}
