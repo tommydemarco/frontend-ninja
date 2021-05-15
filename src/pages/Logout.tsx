@@ -20,7 +20,7 @@ const Logout: React.FC = () => {
       <IonContent>
         <ContentContainer>
           <InfoContent 
-              title="You have successfully logged out" 
+              title="You have logged out"
               subtitle="Log back in to access features"
               buttonText="Log in"
               buttonLink="/login"
