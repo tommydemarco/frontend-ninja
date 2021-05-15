@@ -25,6 +25,7 @@ import Home from './pages/Home';
 import Charts from './pages/Charts';
 import Profile from './pages/Profile';
 import Mode from './pages/Mode';
+import Logout from "./pages/Logout";
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -72,6 +73,9 @@ const App: React.FC = () => {
           </IonMenu>
           <IonTabs>
             <IonRouterOutlet id="main">
+              <Route path="/logout">
+                <Logout />
+              </Route>
               <Route path="/home">
                 <Home />
               </Route>
