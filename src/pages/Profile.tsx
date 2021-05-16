@@ -1,8 +1,8 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonMenuButton } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonMenuButton, IonButton } from '@ionic/react';
 
 import ContentContainer from "../components/ContentContainer";
+import DoubleCTA from "../components/DoubleCTA"
 import ProfileInfo from "../components/ProfileInfo";
-
 
 import { profileData } from "../data/profile-data"
 
@@ -20,6 +20,14 @@ const Tab3: React.FC = () => {
       <IonContent fullscreen>
         <ContentContainer>
           <ProfileInfo {...profileData} />
+          <DoubleCTA>
+            <IonButton color="danger">
+              Delete profile
+            </IonButton>
+            <IonButton routerLink="/logout">
+              Logout
+            </IonButton>
+          </DoubleCTA>
         </ContentContainer>
       </IonContent>
     </IonPage>
