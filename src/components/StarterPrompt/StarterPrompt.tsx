@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { IonButton } from "@ionic/react"
+import { IonButton } from "@ionic/react";
+
+import DoubleCTA from "../DoubleCTA"
 
 import "./StarterPrompt.scss"
 
@@ -33,14 +35,14 @@ const StarterPrompt: React.FC<StarterPromptProps> = ({ active, setPrompt }) => {
             Senior
           </span>
         </div>
-        <div className="starter-prompt__cta-wrapper">
+        <DoubleCTA>
           <IonButton onClick={() => setPrompt(false)} className="ion-activatable ripple-parent" fill="outline" expand="block">
             Go Back
           </IonButton>
           <IonButton className="ion-activatable ripple-parent" expand="block">
             Start
           </IonButton>
-        </div>
+        </DoubleCTA>
       </div>
     </React.Fragment>
   )

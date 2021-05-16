@@ -94,15 +94,4 @@
   &__toggle:checked:after {
     transform: translatex(20px);
   }
-
-  &__cta-wrapper {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 20px;
-
-    ion-button {
-      flex: 1;
-      margin: 0 5px;
-    }
-  }
 }
