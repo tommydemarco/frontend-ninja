@@ -3,7 +3,7 @@ import { IonSpinner } from "@ionic/react"
 import "./LoadingSpinner.scss"
 
 interface LoadingSpinnerProps {
-  color: string;
+  color?: string;
   centered?: boolean; 
 }
 
@@ -14,7 +14,7 @@ const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({ color, centered }) => {
   
   return (
     <div className={classes.join(" ")}>
-      <IonSpinner color={color} />
+      <IonSpinner color={color || "primary"} />
     </div>
   )
 }

@@ -3,6 +3,7 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonMe
 import ContentContainer from "../components/ContentContainer";
 import DoubleCTA from "../components/DoubleCTA"
 import ProfileInfo from "../components/ProfileInfo";
+import Records from "../components/Records";
 
 import { profileData } from "../data/profile-data"
 
@@ -20,6 +21,7 @@ const Tab3: React.FC = () => {
       <IonContent fullscreen>
         <ContentContainer>
           <ProfileInfo {...profileData} />
+          <Records quizzesRecord={1879} sniperRecord={1879} timeRecord={1879} bugfixRecord={1879} />
           <DoubleCTA>
             <IonButton color="danger">
               Delete profile
