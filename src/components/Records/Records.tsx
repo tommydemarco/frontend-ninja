@@ -3,7 +3,7 @@ import { school, bug, locate, hourglass } from "ionicons/icons";
 
 import LoadingSpinner from "../LoadingSpinner"
 
-import "../Records";
+import "./Records.scss";
 
 interface RecordsProps {
   quizzesRecord: number | null | false;
@@ -20,7 +20,7 @@ const Records: React.FC<RecordsProps> = ({ quizzesRecord, sniperRecord, timeReco
           <IonItem>
             <IonIcon icon={school} slot="start" color="primary" />
             <IonLabel>Quizzes</IonLabel>
-            <IonLabel slot="end">
+            <IonLabel slot="end" className="records__points">
               {quizzesRecord === null ? <LoadingSpinner/> 
               : quizzesRecord === false ? 
               <span className="error-message">no data</span>
@@ -30,7 +30,7 @@ const Records: React.FC<RecordsProps> = ({ quizzesRecord, sniperRecord, timeReco
           <IonItem>
             <IonIcon icon={locate} slot="start" color="primary" />
             <IonLabel>Sniper Mode</IonLabel>
-            <IonLabel slot="end">
+            <IonLabel slot="end" className="records__points">
               {sniperRecord === null ? <LoadingSpinner/> 
               : sniperRecord === false ? 
               <span className="error-message">no data</span>
@@ -40,7 +40,7 @@ const Records: React.FC<RecordsProps> = ({ quizzesRecord, sniperRecord, timeReco
           <IonItem>
             <IonIcon icon={hourglass} slot="start" color="primary" />
             <IonLabel>Time Challenge</IonLabel>
-            <IonLabel slot="end">
+            <IonLabel slot="end" className="records__points">
               {timeRecord === null ? <LoadingSpinner/> 
               : timeRecord === false ? 
               <span className="error-message">no data</span>
@@ -50,7 +50,7 @@ const Records: React.FC<RecordsProps> = ({ quizzesRecord, sniperRecord, timeReco
           <IonItem>
             <IonIcon icon={bug} slot="start" color="primary" />
             <IonLabel>Bugfix Mode</IonLabel>
-            <IonLabel slot="end">
+            <IonLabel slot="end" className="records__points">
               {bugfixRecord === null ? <LoadingSpinner/> 
               : bugfixRecord === false ? 
               <span className="error-message">no data</span>

@@ -6,10 +6,9 @@ interface ProfileInfoProps {
   imageAlt: string;
   username: string;
   description: string;
-  email: string;
 }
 
-const ProfileInfo: React.FC<ProfileInfoProps> = ({ imageSrc, imageAlt, username, description, email }) => {
+const ProfileInfo: React.FC<ProfileInfoProps> = ({ imageSrc, imageAlt, username, description }) => {
   return (
     <div className="profile-info">
       <IonGrid>
@@ -21,9 +20,6 @@ const ProfileInfo: React.FC<ProfileInfoProps> = ({ imageSrc, imageAlt, username,
             <h3 className="profile-info__username">
               {username}
             </h3>
-            <span className="profile-info__email">
-              {email}
-            </span>
             <IonButton className="profile-info__edit">
               Edit profile
             </IonButton>
