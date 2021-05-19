@@ -1,13 +1,17 @@
 .profile-info {
   &__image {
     border-radius: 100%;
-    max-width: 100px;
-    height: 100px;
+    display: block;
+  }
+
+  &__data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   &__username {
     margin: 5px;
-    margin-top: 10px;
   }
 
   &__email {

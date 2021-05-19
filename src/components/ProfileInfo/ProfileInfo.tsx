@@ -13,10 +13,10 @@ const ProfileInfo: React.FC<ProfileInfoProps> = ({ imageSrc, imageAlt, username,
     <div className="profile-info">
       <IonGrid>
         <IonRow>
-          <IonCol>
+          <IonCol size="5">
             <img src={imageSrc} alt={imageAlt} className="profile-info__image" />
           </IonCol>  
-          <IonCol>
+          <IonCol size="7" className="profile-info__data">
             <h3 className="profile-info__username">
               {username}
             </h3>
