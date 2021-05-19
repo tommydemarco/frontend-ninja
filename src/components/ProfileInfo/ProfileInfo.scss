@@ -1,6 +1,8 @@
 .profile-info {
   &__image {
     border-radius: 100%;
+    max-width: 100px;
+    height: 100px;
   }
 
   &__username {

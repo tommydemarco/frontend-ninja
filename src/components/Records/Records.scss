@@ -1,4 +1,10 @@
 .records {
+  padding-right: 10px;
+
+  &__title {
+    margin-bottom: 5px;
+  }
+
   &__points {
     flex: none;
   }
