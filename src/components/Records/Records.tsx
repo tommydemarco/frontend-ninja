@@ -1,5 +1,5 @@
 import { IonList, IonItem, IonIcon, IonLabel } from "@ionic/react";
-import { school } from "ionicons/icons";
+import { school, bug, locate, hourglass } from "ionicons/icons";
 
 import LoadingSpinner from "../LoadingSpinner"
 
@@ -18,7 +18,7 @@ const Records: React.FC<RecordsProps> = ({ quizzesRecord, sniperRecord, timeReco
         <h4 className="records__title">Records</h4>
         <IonList>
           <IonItem>
-            <IonIcon icon={school} slot="start" />
+            <IonIcon icon={school} slot="start" color="primary" />
             <IonLabel>Quizzes</IonLabel>
             <IonLabel slot="end">
               {quizzesRecord === null ? <LoadingSpinner/> 
@@ -28,7 +28,7 @@ const Records: React.FC<RecordsProps> = ({ quizzesRecord, sniperRecord, timeReco
             </IonLabel>
           </IonItem>
           <IonItem>
-            <IonIcon icon={school} slot="start" />
+            <IonIcon icon={locate} slot="start" color="primary" />
             <IonLabel>Sniper Mode</IonLabel>
             <IonLabel slot="end">
               {sniperRecord === null ? <LoadingSpinner/> 
@@ -38,7 +38,7 @@ const Records: React.FC<RecordsProps> = ({ quizzesRecord, sniperRecord, timeReco
             </IonLabel>
           </IonItem>
           <IonItem>
-            <IonIcon icon={school} slot="start" />
+            <IonIcon icon={hourglass} slot="start" color="primary" />
             <IonLabel>Time Challenge</IonLabel>
             <IonLabel slot="end">
               {timeRecord === null ? <LoadingSpinner/> 
@@ -48,7 +48,7 @@ const Records: React.FC<RecordsProps> = ({ quizzesRecord, sniperRecord, timeReco
             </IonLabel>
           </IonItem>
           <IonItem>
-            <IonIcon icon={school} slot="start" />
+            <IonIcon icon={bug} slot="start" color="primary" />
             <IonLabel>Bugfix Mode</IonLabel>
             <IonLabel slot="end">
               {bugfixRecord === null ? <LoadingSpinner/> 
