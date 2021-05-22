@@ -1,0 +1,28 @@
+.prduct-card {
+  display: flex;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: -1px 1px 15px 5px rgba(0, 0, 0, 0.1);
+
+  &__img-container {
+    max-width: 100%;
+
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  &__details {
+    background-color: var(--color-black-light);
+    padding: 15px 15px 0;
+  }
+
+  &__price {
+    color: var(--color-white);
+  }
+
+  h5 {
+    color: var(--color-white);
+  }
+}
