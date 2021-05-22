@@ -5,15 +5,16 @@ import DoubleCTA from "../DoubleCTA"
 
 import "./ProductCard.scss";
 
-interface ProductProps {
+export interface ProductCardProps {
+  id: string;
   title: string;
   url: string;
   price: string;
-  imgUrl: string;
+  image: string;
   imgAlt: string;
 }
 
-const ProductCard: React.FC<ProductProps> = ({ title, url, price, imgUrl, imgAlt = ""}) => {
+const ProductCard: React.FC<ProductCardProps> = ({ title, url, price, image, imgAlt = ""}) => {
   const history = useHistory()
 
   const goToProductPage = () => {
@@ -23,7 +24,7 @@ const ProductCard: React.FC<ProductProps> = ({ title, url, price, imgUrl, imgAlt
   return (
     <article onClick={goToProductPage} className="product-card">
       <div className="prduct-card__img-container">
-        <img src={imgUrl} alt={imgAlt} />
+        <img src={image} alt={imgAlt} />
       </div>
       <div className="product-card__details">
         <h5>{title}</h5>
