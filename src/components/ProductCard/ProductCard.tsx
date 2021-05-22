@@ -11,8 +11,8 @@ export interface ProductCardProps {
   url: string;
   price: string;
   image: string;
-  imgAlt: string;
-  loading: boolean;
+  imgAlt?: string;
+  loading?: boolean;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ title, url, price, image, imgAlt = ""}) => {
