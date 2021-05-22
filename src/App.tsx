@@ -20,6 +20,7 @@ import Profile from './pages/Profile';
 import Mode from './pages/Mode';
 import Logout from "./pages/Logout";
 import Legal from "./pages/Legal";
+import Deals from "./pages/Deals";
 // components
 import SideMenu from "./components/SideMenu"
 
@@ -68,7 +69,7 @@ const App: React.FC = () => {
                 <Charts />
               </Route>
               <Route path="/deals">
-                <Profile />
+                <Deals />
               </Route>
               <Route path="/profile">
                 <Profile />

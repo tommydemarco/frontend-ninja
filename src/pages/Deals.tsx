@@ -17,12 +17,15 @@ const Deals: React.FC = () => {
   const [ products, setProducts ] = useState([])
 
   useEffect(() => {
-    const getProducts = async () => {
-      const data = await fetch('https://fakestoreapi.com/products')
-      const productData = await data.json()
-      setProducts(productData)
-    }
-    getProducts()
+    // const getProducts = async () => {
+    //   const data = await fetch('https://fakestoreapi.com/products')
+    //   const productData = await data.json()
+    //   setProducts(productData)
+    // }
+    // getProducts()
+    setTimeout(() => {
+      setProducts([])
+    })
   }, [])
 
   return (
