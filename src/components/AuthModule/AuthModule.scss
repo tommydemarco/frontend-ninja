@@ -1,0 +1,9 @@
+.auth-module {
+  &__notice {
+    padding-top: 15px;
+  }
+
+  &__notice-link {
+    color: var(--color-black-light);
+  }
+}

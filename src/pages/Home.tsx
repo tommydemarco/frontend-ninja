@@ -29,7 +29,7 @@ const Tab1: React.FC = () => {
           <OptionCard path="/mode/bugfix-mode" title="Bugfix Mode" subtitle="Test your bug-fixing skills and fix the mistakes">
             <IonIcon icon={bugOutline} />
           </OptionCard>
-          <OptionCard path="/medals" title="Your Medals" subtitle="Lorem ipsum dolor sit amet consectetur adipiscing">
+          <OptionCard path="/medals" title="Medals Overview" subtitle="View the available medals and check your progress">
             <IonIcon icon={medalOutline} />
           </OptionCard>
         </ContentContainer>

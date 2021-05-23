@@ -21,9 +21,9 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ performRegisterWithEmailAnd
   }
 
   return (
-    <div className="login-form">
+    <div className="register-form">
       <ProviderLogin />
-      <div className="login-form__form">
+      <div className="register-form__form">
         <IonList>
           <IonItem>
             <IonLabel position="fixed">Email</IonLabel>

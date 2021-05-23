@@ -32,6 +32,12 @@ const AuthModule = () => {
       <div className="auth-module__content">
         {mode === "login" ? <LoginForm /> : <RegisterForm />}
       </div>
+      {mode === "login" && (
+        <div className="auth-module__notice">
+          <span>Don't have an ccount?</span>{" "}
+          <span className="auth-module__notice-link" onClick={() => setMode("register")}>Register</span>
+        </div>
+      )}
     </div>
   )
 }
