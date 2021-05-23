@@ -48,7 +48,7 @@ import './theme/variables.css';
 
 const App: React.FC = () => {
 
-  //const state = useContext(appContext)
+  const { state } = useContext(appContext)!
 
   return (
     <IonApp>
@@ -84,26 +84,31 @@ const App: React.FC = () => {
                 <Profile />
               </Route>
             </IonRouterOutlet>
-            <IonTabBar slot="bottom" color="primary">
-              <IonTabButton tab="home" href="/home">
-                <IonIcon icon={gridOutline} />
-                <IonLabel>Home</IonLabel>
-              </IonTabButton>
-              <IonTabButton tab="charts" href="/charts">
-                <IonIcon icon={statsChartOutline} />
-                <IonLabel>Charts</IonLabel>
-              </IonTabButton>
-              <IonTabButton tab="deals" href="/deals">
-                <IonIcon icon={diamondOutline} />
-                <IonLabel>Deals</IonLabel>
-              </IonTabButton>
-              <IonTabButton tab="profile" href="/profile">
-                <IonIcon icon={personOutline} />
-                <IonLabel>Profile</IonLabel>
-              </IonTabButton>
-            </IonTabBar> 
+              <IonTabBar slot="bottom" color="primary">
+                <IonTabButton tab="home" href="/home">
+                  <IonIcon icon={gridOutline} />
+                  <IonLabel>Home</IonLabel>
+                </IonTabButton>
+                <IonTabButton tab="charts" href="/charts">
+                  <IonIcon icon={statsChartOutline} />
+                  <IonLabel>Charts</IonLabel>
+                </IonTabButton>
+                <IonTabButton tab="deals" href="/deals">
+                  <IonIcon icon={diamondOutline} />
+                  <IonLabel>Deals</IonLabel>
+                </IonTabButton>
+                <IonTabButton tab="profile" href="/profile">
+                  <IonIcon icon={personOutline} />
+                  <IonLabel>Profile</IonLabel>
+                </IonTabButton>
+              </IonTabBar> 
           </IonTabs>
         </IonReactRouter>
+        {state.showTabNavigation === false && 
+          (<style>
+            {`ion-tab-bar { display: none }`}
+          </style>)
+        }
       </IonApp>
   )
 }

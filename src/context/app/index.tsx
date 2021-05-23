@@ -2,7 +2,7 @@ import React, { createContext, useReducer } from "react";
 
 interface AppState {
     loggedIn: boolean;
-    showTabNavigation: true
+    showTabNavigation: boolean;
 }
 
 interface Action {

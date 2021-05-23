@@ -16,6 +16,10 @@ ion-segment {
   background: var(--color-white);
 }
 
+.app-tabs--disabled {
+  display: none;
+}
+
 h1,
 h2,
 h3,
