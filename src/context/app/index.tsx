@@ -1,12 +1,8 @@
 import React, { createContext, useReducer } from "react";
 
-export interface AppContextValue {
-    state: AppState;
-    dispatch: React.Dispatch<Action>;
-}
-
 interface AppState {
-    showBottomNavigation: boolean;
+    loggedIn: boolean;
+    showTabNavigation: true
 }
 
 interface Action {
@@ -14,20 +10,26 @@ interface Action {
     payload: any;
 }
 
+export interface AppContextValue {
+    state: AppState;
+    dispatch: React.Dispatch<Action>;
+}
+
 export const APP_ACTION_TYPES = {
     SET_BOTTOM_NAVIGATION: "SET_BOTTOM_NAVIGATION"
 }
 
-const appContext = createContext({})
-
 const appInitialState: AppState = {
-    showBottomNavigation: true
+    loggedIn: false,
+    showTabNavigation: true
 }
+
+const appContext = createContext<AppContextValue | null>(null)
 
 const appReducer = (appState: AppState, action: Action): AppState => {
     switch(action.type) {
         case APP_ACTION_TYPES.SET_BOTTOM_NAVIGATION:
-            return { ...appState, showBottomNavigation: action.payload }
+            return { ...appState, showTabNavigation: action.payload }
     default:
         return appState
     }
@@ -36,7 +38,7 @@ const appReducer = (appState: AppState, action: Action): AppState => {
 const AppContext: React.FC<React.ReactNode> = ({ children }) => {
 
     const [state, dispatch] = useReducer(appReducer, appInitialState)
-    const appContextValue: AppContextValue = { state, dispatch } 
+    const appContextValue = { state, dispatch } 
 
     return (
         <appContext.Provider value={appContextValue}>
