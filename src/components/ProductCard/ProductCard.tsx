@@ -1,4 +1,6 @@
-import { IonButton } from "@ionic/react";
+import { IonButton, IonIcon } from "@ionic/react";
+import { cart, open } from "ionicons/icons";
+
 import { useHistory } from "react-router-dom"
 
 import DoubleCTA from "../DoubleCTA"
@@ -31,8 +33,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ title, url, price, image, img
         <h5>{title}</h5>
         <span className="product-card__price">{price}</span>
         <DoubleCTA>
-          <IonButton>View Product</IonButton>
-          <IonButton>Buy</IonButton>
+          <IonButton><IonIcon slot="start" icon={open} />View</IonButton>
+          <IonButton><IonIcon slot="start" icon={cart} />Buy</IonButton>
         </DoubleCTA>
       </div>
     </article>

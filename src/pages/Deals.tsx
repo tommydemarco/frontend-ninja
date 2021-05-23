@@ -12,15 +12,10 @@ import {
 import ContentConteiner from "../components/ContentContainer"
 import ProductSlider from "../components/ProductSlider"
 
-import { ProductCardProps } from "../components/ProductCard/ProductCard"
-
 import {productData} from "../data/product-data"
 
 const Deals: React.FC = () => {
-
-  const [ loading, setLoading ] = useState(false)
-
-  const [ products, setProducts ] = useState<ProductCardProps[]>([])
+  const [ products, setProducts ] = useState<any>({})
 
   useEffect(() => {
     // const getProducts = async () => {
@@ -31,7 +26,7 @@ const Deals: React.FC = () => {
     // getProducts()
     setTimeout(() => {
       setProducts(productData)
-    })
+    }, 7000)
   }, [])
 
   return (
@@ -46,7 +41,9 @@ const Deals: React.FC = () => {
       </IonHeader>
       <IonContent fullscreen>   
         <ContentConteiner> 
-            <ProductSlider loading={loading} title="Developer Mugs" products={products} />
+            <ProductSlider title="Developer Mugs" products={products.mugs} />
+            <ProductSlider title="Developer Mugs" products={products.hoodies} />
+            <ProductSlider title="Developer Mugs" products={products.mugs} />
         </ContentConteiner>
       </IonContent>
     </IonPage>

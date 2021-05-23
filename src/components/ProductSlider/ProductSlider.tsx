@@ -12,16 +12,31 @@ import { ProductCardProps } from "../ProductCard/ProductCard"
 interface ProductSliderProps {
   title: string;
   products: ProductCardProps[];
-  loading: boolean;
 }
 
-const ProductSlider: React.FC<ProductSliderProps> = ({ title, products, loading }) => {
+const loadingSkeletonData = {
+  title: "",
+  image: "",
+  imageAlt: "",
+  price: "",
+  url: ""
+}
+
+const ProductSlider: React.FC<ProductSliderProps> = ({ title, products }) => {
+
+  console.log(products)
 
   const [ swiper, setSwiper ] = useState<any>(null)
 
+  const loadingSkeleton = [
+      { id: 0, ...loadingSkeletonData }, 
+      { id: 1, ...loadingSkeletonData }, 
+      { id: 2, ...loadingSkeletonData }
+  ]
+
   useEffect(() => {
     if(swiper !== null) {
-      swiper.update();
+      swiper.update()
     }
   }, [products, swiper])
 
@@ -33,16 +48,21 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ title, products, loading 
           slidesPerView={1}
           onSwiper={(swiper) => setSwiper(swiper)}
         >
-        {products.map((product) => {
-            return (
-              <SwiperSlide key={product.id}>
-                <ProductCard {...product} />
-              </SwiperSlide>
-            )
-          })
-        }
+        {products ? renderProducts(products) : renderProducts(loadingSkeleton)}
       </Swiper>
     </div>
+  )
+}
+
+const renderProducts = (products: any) => {
+  return (
+      products.map((product: ProductCardProps) => {
+        return (
+          <SwiperSlide key={product.id}>
+            <ProductCard {...product} />
+          </SwiperSlide>
+        )
+      })
   )
 }
 
