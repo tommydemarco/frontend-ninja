@@ -80,6 +80,9 @@ const App: React.FC = () => {
               <Route path="/mode/:modeSlug">
                 <Mode />
               </Route>
+              <Route>
+                <Profile />
+              </Route>
             </IonRouterOutlet>
             <IonTabBar slot="bottom" color="primary">
               <IonTabButton tab="home" href="/home">

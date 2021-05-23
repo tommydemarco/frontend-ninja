@@ -8,7 +8,6 @@ import ChartElement from "../ChartElement"
 import ContentConteiner from "../ContentContainer"
 import LoadingSpinner from "../LoadingSpinner"
 
-
 import "./Chart.scss"
 
 import { chartData } from "../../data/chart-data"
