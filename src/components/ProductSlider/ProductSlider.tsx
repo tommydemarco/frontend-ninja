@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 
 import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Pagination } from 'swiper';
 
 import ProductCard from "../ProductCard"
 
@@ -21,6 +22,7 @@ const loadingSkeletonData = {
   price: "",
   url: ""
 }
+SwiperCore.use([ Pagination ]);
 
 const ProductSlider: React.FC<ProductSliderProps> = ({ title, products }) => {
 
@@ -42,8 +44,9 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ title, products }) => {
 
   return (
     <div className="product-slider">
-        <h3>{title}</h3>
+        <h3 className="product-slider__title">{title}</h3>
         <Swiper
+          loop={true}
           spaceBetween={20}
           slidesPerView={1}
           onSwiper={(swiper) => setSwiper(swiper)}

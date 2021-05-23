@@ -1,4 +1,10 @@
 .product-slider {
+  padding-bottom: 25px;
+
+  &__title {
+    margin-bottom: 15px;
+  }
+
   .swiper-container {
     width: 90%;
     overflow: visible;
