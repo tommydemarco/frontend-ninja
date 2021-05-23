@@ -38,6 +38,7 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ title, products }) => {
 
   useEffect(() => {
     if(swiper !== null) {
+      swiper.slideTo(1)
       swiper.update()
     }
   }, [products, swiper])
@@ -46,9 +47,9 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ title, products }) => {
     <div className="product-slider">
         <h3 className="product-slider__title">{title}</h3>
         <Swiper
-          loop={true}
           spaceBetween={20}
           slidesPerView={1}
+          
           onSwiper={(swiper) => setSwiper(swiper)}
         >
         {products ? renderProducts(products) : renderProducts(loadingSkeleton)}

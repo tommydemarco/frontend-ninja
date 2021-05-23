@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-import { IonIcon } from "@ionic/react";
-import { trophy, medal } from "ionicons/icons"
+import { IonIcon, IonSegment, IonSegmentButton, IonLabel } from "@ionic/react";
+import { trophy, medal, planet } from "ionicons/icons"
 
 import ChartElement from "../ChartElement"
 import LoadingSpinner from "../LoadingSpinner"
@@ -15,6 +15,7 @@ interface ChartProps {
 
 const Chart: React.FC<ChartProps> = ({ mode }) => {
 
+  const [ activeCategory, setActiveCategory ] = useState("all")
   const [ data, setData ] = useState<any[]>([])
   const [ loading, setLoading ] = useState(true)
   const [ error, setError ] = useState(false)
@@ -40,11 +41,23 @@ const Chart: React.FC<ChartProps> = ({ mode }) => {
   }
 
   const assignIconColor = (index: number) => {
-    return index === 0 ? "#e1b12c" : index === 1 ? "#c8d6e5" : index === 2 ? "#e15f41" : "#778ca3"
+    return index === 0 ? "#e1b12c" : index === 1 ? "#bdc3c7" : index === 2 ? "#e15f41" : "#778ca3"
   }
 
   return (
-    <React.Fragment>
+    <div className="chart">
+      <IonSegment scrollable={true} onIonChange={e => setActiveCategory(e.detail.value!)} value={activeCategory}>
+          <IonSegmentButton value="all">
+            <IonIcon icon={planet} slot="start" />
+            <IonLabel>All</IonLabel>
+          </IonSegmentButton>
+          <IonSegmentButton value="css">
+            <IonLabel>Time Challenge</IonLabel>
+          </IonSegmentButton>
+          <IonSegmentButton value="js">
+            <IonLabel>Bugfix mode</IonLabel>
+          </IonSegmentButton>
+        </IonSegment>
         {
           data.map((data, index) => {
             return (
@@ -54,7 +67,7 @@ const Chart: React.FC<ChartProps> = ({ mode }) => {
             )
           })
         }
-    </React.Fragment>
+    </div>
   )
 }
 
