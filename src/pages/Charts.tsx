@@ -29,7 +29,7 @@ const Charts: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>   
-        <IonSegment scrollable={true} onIonChange={e => setActiveChart(e.detail.value!)} value={activeChart}>
+        <IonSegment mode="md" scrollable={true} onIonChange={e => setActiveChart(e.detail.value!)} value={activeChart}>
           <IonSegmentButton value="sniper-mode">
             <IonLabel>Sniper mode</IonLabel>
           </IonSegmentButton>

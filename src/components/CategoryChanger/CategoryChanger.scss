@@ -1,5 +1,8 @@
 .category-changer {
   position: fixed;
   bottom: 0;
-  background: white;
+  right: 0;
+  left: 0;
+  background: var(--color-white);
+  box-shadow: -1px 1px 15px 5px rgba(0, 0, 0, 0.1);
 }

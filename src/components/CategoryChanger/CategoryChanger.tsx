@@ -9,10 +9,14 @@ interface CategoryChangerProps {
 }
 
 const CategoryChanger: React.FC<CategoryChangerProps> = ({ activeCategory, setActiveCategory }) => {
+
+  const onActiveCategorySelection = (category: string) => {
+    setActiveCategory(category);
+  }
   
   return (
     <div className="category-changer">
-      <IonSegment scrollable={true} onIonChange={e => setActiveCategory(e.detail.value!)} value={activeCategory}>
+      <IonSegment mode="md" scrollable={true} onIonChange={e => onActiveCategorySelection(e.detail.value!)} value={activeCategory}>
         <IonSegmentButton value="all">
           <IonIcon icon={planet} slot="start" />
           <IonLabel>All</IonLabel>

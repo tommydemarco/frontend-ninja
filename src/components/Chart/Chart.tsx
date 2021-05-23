@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import { IonIcon } from "@ionic/react";
 import { trophy, medal } from "ionicons/icons"
@@ -19,6 +19,8 @@ interface ChartProps {
 
 const Chart: React.FC<ChartProps> = ({ mode }) => {
 
+  const chartRef = useRef<HTMLDivElement>(null)
+
   const [ activeCategory, setActiveCategory ] = useState("all")
   const [ data, setData ] = useState<any>([])
   const [ loading, setLoading ] = useState(true)
@@ -33,6 +35,12 @@ const Chart: React.FC<ChartProps> = ({ mode }) => {
       setError(false)
     }, 1500)
   }, [mode])
+
+  useEffect(() => {
+    if (chartRef.current !== null) {
+      chartRef.current.scrollIntoView({ behavior: "smooth" })
+    }
+  }, [activeCategory])
 
   if (loading) {
     return (
@@ -49,7 +57,7 @@ const Chart: React.FC<ChartProps> = ({ mode }) => {
   }
 
   return (
-    <div className="chart">
+    <div className="chart" ref={chartRef}>
         {
           Object.keys(data).map(function(key, index) {
             return (
