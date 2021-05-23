@@ -1,8 +1,6 @@
-import { IonButtons, IonContent, IonHeader, IonIcon, IonMenuButton, IonPage, IonTitle, IonToolbar } from "@ionic/react";
-import { logOut } from "ionicons/icons"
+import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from "@ionic/react";
 
 import ContentContainer from "../components/ContentContainer";
-import InfoContent from "../components/InfoContent";
 
 const Login: React.FC = () => {
   return (
@@ -17,14 +15,7 @@ const Login: React.FC = () => {
       </IonHeader>
       <IonContent>
         <ContentContainer>
-          <InfoContent 
-              title="You have logged out"
-              subtitle="Log back in to access features"
-              buttonText="Log in"
-              buttonLink="/login"
-          >
-            <IonIcon icon={logOut} color="primary" />
-          </InfoContent>  
+            
         </ContentContainer>
       </IonContent>
     </IonPage>
