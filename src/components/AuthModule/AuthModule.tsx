@@ -3,7 +3,8 @@ import { balloon } from "ionicons/icons"
 import { useState } from "react"
 
 import LoginForm from "../LoginForm";
-import InfoContent from "../InfoContent"
+import InfoContent from "../InfoContent";
+import RegisterForm from "../RegisterForm"
 
 import "./AuthModule.scss"
 
@@ -29,7 +30,7 @@ const AuthModule = () => {
         </IonSegmentButton>
       </IonSegment>
       <div className="auth-module__content">
-        {mode === "login" ? <LoginForm /> : <LoginForm />}
+        {mode === "login" ? <LoginForm /> : <RegisterForm />}
       </div>
     </div>
   )

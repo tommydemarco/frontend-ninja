@@ -1,7 +1,7 @@
 import { IonButton, IonIcon } from "@ionic/react"
 import { logoGoogle } from "ionicons/icons"
 
-const GoogleLogin = () => {
+const ProviderLogin = () => {
   return (
     <IonButton expand="block" color="primary">
       <IonIcon icon={logoGoogle} slot="start" />
@@ -10,4 +10,4 @@ const GoogleLogin = () => {
   )
 }
 
-export default GoogleLogin;
+export default ProviderLogin;

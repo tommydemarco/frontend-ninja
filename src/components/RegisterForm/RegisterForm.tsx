@@ -3,20 +3,21 @@ import { IonButton, IonInput, IonItem, IonLabel, IonList } from "@ionic/react";
 
 import ProviderLogin from "../ProviderLogin";
 
-import "./LoginForm.scss";
+import "./RegisterForm.scss";
 
-interface LoginFormProps {
-  performLoginWithEmailAndPassword?: (email: string, password: string ) => void
+interface RegisterFormProps {
+  performRegisterWithEmailAndPassword?: (email: string, password: string, username: string) => void
 }
 
-const LoginForm: React.FC<LoginFormProps> = ({ performLoginWithEmailAndPassword }) => {
+const RegisterForm: React.FC<RegisterFormProps> = ({ performRegisterWithEmailAndPassword }) => {
 
   const [ email, setEmail ] = useState("")
+  const [ username, setUsername ] = useState("")
   const [ password, setPassword ] = useState("")
 
-  const onLogin = () => {
+  const onRegister = () => {
     if (email === "" || password === "") return
-    //performLoginWithEmailAndPassword(email, password)
+    //performLoginWithEmailAndPassword(email, password, username)
   }
 
   return (
@@ -29,6 +30,10 @@ const LoginForm: React.FC<LoginFormProps> = ({ performLoginWithEmailAndPassword 
             <IonInput type="email" value={email} onIonChange={e => setEmail(e.detail.value!)} />
           </IonItem>
           <IonItem>
+            <IonLabel position="fixed">Username</IonLabel>
+            <IonInput type="text" value={username} onIonChange={e => setUsername(e.detail.value!)} />
+          </IonItem>
+          <IonItem>
             <IonLabel position="fixed">Password</IonLabel>
             <IonInput type="password" 
                       value={password} 
@@ -36,12 +41,12 @@ const LoginForm: React.FC<LoginFormProps> = ({ performLoginWithEmailAndPassword 
             />
           </IonItem>
         </IonList>
-        <IonButton onClick={onLogin}>
-          Login
+        <IonButton onClick={onRegister}>
+          Register
         </IonButton>
       </div>
     </div>
   )
 }
 
-export default LoginForm;
+export default RegisterForm;
