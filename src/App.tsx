@@ -18,9 +18,11 @@ import Home from './pages/Home';
 import Charts from './pages/Charts';
 import Profile from './pages/Profile';
 import Mode from './pages/Mode';
+import Login from "./pages/Login";
 import Logout from "./pages/Logout";
 import Legal from "./pages/Legal";
 import Deals from "./pages/Deals";
+
 // components
 import SideMenu from "./components/SideMenu"
 
@@ -58,6 +60,9 @@ const App: React.FC = () => {
             <IonRouterOutlet id="main">
               <Route path="/legal/:page">
                 <Legal />
+              </Route>
+              <Route path="/login">
+                <Login />
               </Route>
               <Route path="/logout">
                 <Logout />
