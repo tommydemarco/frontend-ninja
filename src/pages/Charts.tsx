@@ -12,7 +12,6 @@ import {
   IonMenuButton,
 } from '@ionic/react';
 
-import ContentConteiner from "../components/ContentContainer"
 import Chart from "../components/Chart"
 
 const Charts: React.FC = () => {
@@ -40,10 +39,8 @@ const Charts: React.FC = () => {
           <IonSegmentButton value="bugfix-mode">
             <IonLabel>Bugfix mode</IonLabel>
           </IonSegmentButton>
-        </IonSegment>
-        <ContentConteiner>  
-          <Chart mode={activeChart} />
-        </ContentConteiner>
+        </IonSegment> 
+        <Chart mode={activeChart} />
       </IonContent>
     </IonPage>
   );

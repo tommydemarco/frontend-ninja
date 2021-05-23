@@ -1,1 +1,0 @@
-export { CategoryChanger } from "./CatergoryChanger"

@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
 
-import { IonIcon, IonSegment, IonSegmentButton, IonLabel } from "@ionic/react";
-import { trophy, medal, planet } from "ionicons/icons"
+import { IonIcon } from "@ionic/react";
+import { trophy, medal } from "ionicons/icons"
 
+import CategoryChanger from "../CategoryChanger"
 import ChartElement from "../ChartElement"
+import ContentConteiner from "../ContentContainer"
 import LoadingSpinner from "../LoadingSpinner"
+
+
 import "./Chart.scss"
 
 import { chartData } from "../../data/chart-data"
@@ -16,7 +20,7 @@ interface ChartProps {
 const Chart: React.FC<ChartProps> = ({ mode }) => {
 
   const [ activeCategory, setActiveCategory ] = useState("all")
-  const [ data, setData ] = useState<any[]>([])
+  const [ data, setData ] = useState<any>([])
   const [ loading, setLoading ] = useState(true)
   const [ error, setError ] = useState(false)
 
@@ -46,27 +50,24 @@ const Chart: React.FC<ChartProps> = ({ mode }) => {
 
   return (
     <div className="chart">
-      <IonSegment scrollable={true} onIonChange={e => setActiveCategory(e.detail.value!)} value={activeCategory}>
-          <IonSegmentButton value="all">
-            <IonIcon icon={planet} slot="start" />
-            <IonLabel>All</IonLabel>
-          </IonSegmentButton>
-          <IonSegmentButton value="css">
-            <IonLabel>Time Challenge</IonLabel>
-          </IonSegmentButton>
-          <IonSegmentButton value="js">
-            <IonLabel>Bugfix mode</IonLabel>
-          </IonSegmentButton>
-        </IonSegment>
         {
-          data.map((data, index) => {
+          Object.keys(data).map(function(key, index) {
             return (
-              <ChartElement username={data.username} points={data.points}>
-                <IonIcon slot="start" icon={assignChartItemIcon(index)} style={{color: assignIconColor(index), fontSize: "30px"}} />
-              </ChartElement>
+              <div className="cart__item" key={index} style={{ display: activeCategory === key ? "block" : "none"}}>
+                  <ContentConteiner>
+              {data[key].map((data: any, index: any) => {
+              return (
+                    <ChartElement username={data.username} points={data.points}>
+                      <IonIcon slot="start" icon={assignChartItemIcon(index)} style={{color: assignIconColor(index), fontSize: "30px"}} />
+                    </ChartElement>
+              )
+              })}
+              </ContentConteiner>
+              </div>
             )
-          })
+          })          
         }
+        <CategoryChanger activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
     </div>
   )
 }
