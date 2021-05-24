@@ -1,1 +1,1 @@
-export { default } from "./MedalCard"
+export { default } from "./TrophyCard"

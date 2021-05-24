@@ -3,7 +3,7 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonMe
 import ContentContainer from '../components/ContentContainer';
 import TrophyCard from "../components/TrophyCard";
 
-import { medals } from "../data/trophies-data"
+import { trophies } from "../data/trophies-data"
 
 const Medals: React.FC = () => {
   return (
@@ -13,7 +13,7 @@ const Medals: React.FC = () => {
           <IonButtons slot="start">
             <IonBackButton />
           </IonButtons>
-          <IonTitle>Medals</IonTitle>
+          <IonTitle>Trophies</IonTitle>
           <IonButtons slot="end">
             <IonMenuButton />
           </IonButtons>
@@ -21,9 +21,9 @@ const Medals: React.FC = () => {
       </IonHeader>
       <IonContent fullscreen>
         <ContentContainer>
-          {medals.map((medal) => {
+          {trophies.map((trophy) => {
             return (
-              <TrophyCard {...medal} key={medal.title} />
+              <TrophyCard {...trophy} key={trophy.title} />
             )
           })}
         </ContentContainer>

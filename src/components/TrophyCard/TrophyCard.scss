@@ -40,9 +40,12 @@
     color: var(--color-black-light);
     padding: 5px 10px;
     border-radius: 5px;
+    text-transform: capitalize;
   }
 
   &__progress {
+    display: flex;
+    align-items: center;
     color: var(--color-white);
   }
 }

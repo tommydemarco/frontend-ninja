@@ -1,4 +1,4 @@
-export const medals = [
+export const trophies = [
   {
     title: "Master of all",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",

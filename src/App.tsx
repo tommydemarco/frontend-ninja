@@ -67,7 +67,7 @@ const App: React.FC = () => {
               <Route path="/deals"><Deals /></Route>
               <Route path="/profile"><Profile /></Route>
               <Route path="/mode/:modeSlug"><Mode /></Route>
-              <Route path="/medals"><Trophies /></Route>
+              <Route path="/trophies"><Trophies /></Route>
               <Route exact path="/"><Redirect to="/home" /></Route>
               <Route><Profile /></Route>
             </IonRouterOutlet>

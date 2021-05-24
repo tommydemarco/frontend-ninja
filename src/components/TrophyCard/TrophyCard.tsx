@@ -32,7 +32,10 @@ const TrophyCard: React.FC<TrophyCardProps> = (props) => {
       <footer className="trophy-card__footer">
         <span className="trophy-card__rarity">{rarity}</span>
         {owned ? (
-          <IonIcon icon={checkmarkCircle} color="success" />
+          <div className="trophy-card__progress">
+            <span>Trophy owned&nbsp;</span><IonIcon icon={checkmarkCircle} color="success" />
+          </div>
+          
         ) : (
           <div className="trophy-card__progress">
             Progress: 0 / 3
