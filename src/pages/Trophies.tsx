@@ -1,11 +1,22 @@
+import { useState } from "react";
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonMenuButton, IonBackButton } from '@ionic/react';
 
 import ContentContainer from '../components/ContentContainer';
+import OptionSelector from "../components/OptionSelector";
 import TrophyCard from "../components/TrophyCard";
 
 import { trophies } from "../data/trophies-data"
 
+const sortingOptions = [
+  { value: "rarity", label: "Rarity" },
+  { value: "alphabetical", label: "Alphabetical" },
+  { value: "owned-first", label: "Owned First" },
+]
+
 const Medals: React.FC = () => {
+
+  const [ sortingValue, setSortingValue ] = useState("rarity")
+
   return (
     <IonPage>
       <IonHeader>
@@ -21,6 +32,13 @@ const Medals: React.FC = () => {
       </IonHeader>
       <IonContent fullscreen>
         <ContentContainer>
+          <OptionSelector 
+            activeValue={sortingValue} 
+            setterFunction={setSortingValue} 
+            values={sortingOptions}
+            label="Sort"
+            multiple={false}
+          />
           {trophies.map((trophy) => {
             return (
               <TrophyCard {...trophy} key={trophy.title} />

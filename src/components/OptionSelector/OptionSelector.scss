@@ -1,0 +1,15 @@
+.option-selector {
+  border-radius: 5px;
+  border: 2px solid var(--color-black-light);
+  margin-bottom: 20px;
+
+  ion-item {
+    border-radius: 5px;
+  }
+
+  ion-label {
+    font-family: "Lato", sans-serif !important;
+    color: var(--color-black-light) !important;
+    font-weight: 700;
+  }
+}

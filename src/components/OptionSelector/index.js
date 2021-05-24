@@ -1,1 +1,1 @@
-export { default } from "./OptionSorter"
+export { default } from "./OptionSelector"

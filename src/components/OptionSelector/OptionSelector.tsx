@@ -2,7 +2,7 @@ import { IonSelect, IonSelectOption, IonItem, IonLabel } from "@ionic/react"
 
 import "./OptionSelector.scss"
 
-interface OptionSorterProps {
+interface OptionSelectorProps {
   label: string;
   multiple: boolean;
   activeValue: string;
@@ -10,9 +10,9 @@ interface OptionSorterProps {
   setterFunction: (value: string) => void
 }
 
-const OptionSorter: React.FC<OptionSorterProps> = ({ label, multiple, activeValue, values, setterFunction }) => {
+const OptionSelector: React.FC<OptionSelectorProps> = ({ label, multiple, activeValue, values, setterFunction }) => {
   return (
-    <div className="option-sorter">
+    <div className="option-selector">
       <IonItem>
         <IonLabel>{label}</IonLabel>
         <IonSelect multiple={multiple} value={activeValue} onIonChange={e => setterFunction(e.detail.value)}>
@@ -27,4 +27,4 @@ const OptionSorter: React.FC<OptionSorterProps> = ({ label, multiple, activeValu
   )
 }
 
-export default OptionSorter;
+export default OptionSelector;
