@@ -1,7 +1,7 @@
 import "./FlexContainer.scss"
 
 interface FlexContainerProps {
-  children: React.ReactChildren
+  children: React.ReactNode
 }
 
 const FlexContainer: React.FC<FlexContainerProps> = ({ children }) => {

@@ -22,7 +22,7 @@ import Login from "./pages/Login";
 import Logout from "./pages/Logout";
 import Legal from "./pages/Legal";
 import Deals from "./pages/Deals";
-import Medals from "./pages/Medals";
+import Trophies from "./pages/Trophies";
 
 // components
 import SideMenu from "./components/SideMenu"
@@ -67,8 +67,7 @@ const App: React.FC = () => {
               <Route path="/deals"><Deals /></Route>
               <Route path="/profile"><Profile /></Route>
               <Route path="/mode/:modeSlug"><Mode /></Route>
-              <Route path="/medals"><Medals /></Route>
-              {/* <Route path="/medals/:medal"><Medal /></Route> */}
+              <Route path="/medals"><Trophies /></Route>
               <Route exact path="/"><Redirect to="/home" /></Route>
               <Route><Profile /></Route>
             </IonRouterOutlet>

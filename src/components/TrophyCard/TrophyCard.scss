@@ -1,0 +1,48 @@
+.trophy-card {
+  display: block;
+  box-shadow: -1px 1px 15px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  &__header {
+    margin: 20px 20px 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &__icon-container {
+    margin-right: 20px;
+
+    ion-icon {
+      font-size: 60px;
+    }
+  }
+
+  &__footer {
+    background-color: var(--color-black-light);
+    display: flex;
+    padding: 17px 20px;
+    justify-content: space-between;
+    align-items: center;
+
+    ion-icon {
+      font-size: 30px;
+    }
+  }
+
+  &__rarity {
+    background-color: var(--color-white);
+    color: var(--color-black-light);
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+
+  &__progress {
+    color: var(--color-white);
+  }
+}
