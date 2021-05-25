@@ -1,3 +1,4 @@
+import { IonButton } from "@ionic/react";
 import React from "react";
 
 import "./TestQuestion.scss";
@@ -32,12 +33,15 @@ const TestQuestion: React.FC<TestQuestionProps> = ({ question, code, answers }) 
       <div className="test-question__answers">
         {mixedAnswers.map(answer => {
           return (
-            <div 
-                className="test-question__answer" 
+            <IonButton 
+                className="test-question__answer"
+                fill="solid"
+                color="medium"
+                expand="block"
                 onClick={() => onClickAnswer(answer.correct)}
             >
-              {answer.text}
-            </div>
+              <span className="test-question__answer-label">{answer.text}</span>
+            </IonButton>
           )
         })}
       </div>

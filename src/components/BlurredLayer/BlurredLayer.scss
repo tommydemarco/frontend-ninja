@@ -9,6 +9,7 @@
   opacity: 0;
   transition: opacity 0.5s ease;
   filter: blur(1px);
+  pointer-events: none;
 
   &--active {
     opacity: 1;

@@ -11,6 +11,7 @@ import {
   IonToolbar,
   useIonViewDidLeave } from "@ionic/react";
 
+import BlurredLayer from "../components/BlurredLayer";
 import ContentContainer from "../components/ContentContainer";
 import TestCountdown from "../components/TestCountdown";
 import TestQuestion from "../components/TestQuestion";
@@ -27,7 +28,7 @@ const Login: React.FC = () => {
   useEffect(() => {
     setTimeout(() => {
       setTestCountdown(false)
-    }, 3000)
+    }, 300000000)
   }, [])
 
   useIonViewDidLeave(() => {
@@ -60,6 +61,7 @@ const Login: React.FC = () => {
       </IonHeader>
       <IonContent>
         <ContentContainer>
+          <BlurredLayer active={testCountdown} />
           <Timer timer={20} />
           <TestCountdown isOpen={testCountdown} setTestCountdown={setTestCountdown}/>
           <TestQuestion {...currentQuestion} />

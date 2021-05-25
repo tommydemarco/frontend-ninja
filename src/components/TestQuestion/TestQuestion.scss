@@ -5,11 +5,26 @@
   }
 
   &__answers {
-    position: absolute {
-      bottom: 0;
-      left: 0;
-      right: 0;
-      width: 100%;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-shadow: -1px 1px 15px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  &__answer {
+    white-space: inherit;
+    height: fit-content;
+    text-transform: initial;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
     }
+  }
+
+  &__answer-label {
+    padding: 10px 0;
   }
 }
