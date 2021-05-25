@@ -1,0 +1,28 @@
+.test-countdown {
+  .alert-wrapper {
+    contain: none;
+    border-top: var(--color-white) solid 8px;
+
+    &::before {
+      height: 8px;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      content: "";
+      width: 100%;
+      position: absolute;
+      background-color: var(--color-black-light);
+      top: -8px;
+      animation-name: timer-bar;
+      animation-duration: 5s;
+    }
+  }
+}
+
+@keyframes timer-bar {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}

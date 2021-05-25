@@ -1,19 +1,37 @@
-import { IonBackButton, IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from "@ionic/react";
+import { useState, useEffect } from "react"
+import { 
+  IonBackButton, 
+  IonButtons, 
+  IonContent, 
+  IonHeader, 
+  IonMenuButton, 
+  IonPage, 
+  IonTitle, 
+  IonToolbar,
+  useIonViewWillLeave } from "@ionic/react";
 
-import AuthModule from "../components/AuthModule";
 import ContentContainer from "../components/ContentContainer";
+import TestCountdown from "../components/TestCountdown";
 
 const Login: React.FC = () => {
 
-  const onBackButtonClick = () => {
-    console.log("Are you sure you want to go back")
-  }
+  const [ testCountdown, setTestCountdown ] = useState(true)
+  
+  useEffect(() => {
+    // setTimeout(() => {
+    //   setTestCountdown(false)
+    // }, 3000)
+  }, [])
+
+  useIonViewWillLeave(() => {
+    
+  })
 
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar color="primary">
-          <IonButtons slot="start" onClick={onBackButtonClick}>
+          <IonButtons slot="start">
             <div onClick={() => console.log("helooo")}>
               <IonBackButton />
             </div>
@@ -26,7 +44,7 @@ const Login: React.FC = () => {
       </IonHeader>
       <IonContent>
         <ContentContainer>
-            <AuthModule />
+          <TestCountdown isOpen={testCountdown} setTestCountdown={setTestCountdown}/>
         </ContentContainer>
       </IonContent>
     </IonPage>
