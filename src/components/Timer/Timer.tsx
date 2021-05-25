@@ -1,20 +1,16 @@
-import { useState, useEffect } from "react"
-
 import "./Timer.scss";
 
-const Timer = () => {
+interface TimerProps {
+  timer: number;
+}
 
-  const [ timer, setTimer ] = useState(20)
-
-  useEffect(() => {
-
-  })
+const Timer: React.FC<TimerProps> = ({ timer }) => {
 
   return (
     <div className="timer">
-      <span className="timer__number">
+      <h5 className="timer__number">
         {timer}
-      </span>
+      </h5>
     </div>
   )
 }

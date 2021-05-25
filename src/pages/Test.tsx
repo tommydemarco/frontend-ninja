@@ -13,6 +13,7 @@ import {
 
 import ContentContainer from "../components/ContentContainer";
 import TestCountdown from "../components/TestCountdown";
+import Timer from "../components/Timer"
 
 const Login: React.FC = () => {
 
@@ -21,13 +22,13 @@ const Login: React.FC = () => {
   const [ testCountdown, setTestCountdown ] = useState(true)
   
   useEffect(() => {
-    // setTimeout(() => {
-    //   setTestCountdown(false)
-    // }, 3000)
+    setTimeout(() => {
+      setTestCountdown(false)
+    }, 3000)
   }, [])
 
   useIonViewDidLeave(() => {
-    //history.replace(history.location)
+    history.replace(history.location)
   })
 
   return (
@@ -47,6 +48,7 @@ const Login: React.FC = () => {
       </IonHeader>
       <IonContent>
         <ContentContainer>
+          <Timer timer={20} />
           <TestCountdown isOpen={testCountdown} setTestCountdown={setTestCountdown}/>
         </ContentContainer>
       </IonContent>
