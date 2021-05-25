@@ -5,13 +5,16 @@ import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 // context
-import AppContext from "./context/app"
+import AppContext from "./context/app";
+import TestContext from "./context/test"
 
 const { SplashScreen } = Plugins
 ReactDOM.render(
     <React.StrictMode>
       <AppContext>
-        <App />
+        <TestContext>
+          <App />
+        </TestContext>
       </AppContext>
     </React.StrictMode>,
   document.getElementById('root')

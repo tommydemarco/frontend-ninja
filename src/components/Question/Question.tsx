@@ -6,8 +6,8 @@ interface QuestionProps {
 
 const Question: React.FC<QuestionProps> = ({ questionText }) => {
   return (
-    <div>
-      <h4>
+    <div className="question">
+      <h4 className="question__text">
        {questionText}
       </h4>
     </div>
