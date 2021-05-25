@@ -7,6 +7,7 @@ interface BlurredLayerProps {
 const BlurredLayer: React.FC<BlurredLayerProps> = ({ active }) => {
 
   const classes = ["blurred-layer"]
+  if (active) classes.push("blurred-layer--active")
 
   return (
     <div className={classes.join(" ")}>
