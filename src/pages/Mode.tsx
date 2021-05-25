@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useParams, useHistory } from "react-router-dom"
-import { IonContent, IonHeader, IonPage, IonIcon, IonTitle, IonMenuButton, IonToolbar, IonButtons, IonBackButton } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonIcon, IonTitle, IonMenuButton, IonToolbar, IonButtons, IonBackButton, useIonViewDidLeave } from '@ionic/react';
 
 import ContentContainer from "../components/ContentContainer"
 import FlexContainer from "../components/FlexContainer";
@@ -21,6 +21,10 @@ const Tab3: React.FC = (props) => {
   const goToTest = () => {
     history.push("/mode/" + modeSlug + "/" + categoryPath)
   }
+
+  useIonViewDidLeave(() => {
+    setPromptActive(false)
+  })
 
   //@ts-ignore
   const categories = modesCategory[modeSlug]

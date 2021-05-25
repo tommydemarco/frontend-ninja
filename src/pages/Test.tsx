@@ -42,7 +42,7 @@ const Login: React.FC = () => {
   })
 
   useIonViewDidLeave(() => {
-    history.replace(history.location)
+    //
   })
 
   //const mixedTestQuestions = 

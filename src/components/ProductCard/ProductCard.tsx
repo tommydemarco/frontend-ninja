@@ -1,8 +1,6 @@
 import { IonButton, IonIcon } from "@ionic/react";
 import { cart, open } from "ionicons/icons";
 
-import { useHistory } from "react-router-dom"
-
 import DoubleCTA from "../DoubleCTA"
 
 import "./ProductCard.scss";
@@ -18,23 +16,24 @@ export interface ProductCardProps {
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ title, url, price, image, imgAlt = ""}) => {
-  const history = useHistory()
-
-  const goToProductPage = () => {
-    history.push("products/" + url)
-  }
+  
+  // const goToProductPage = () => {
+  //   history.push("products/" + url)
+  // }
 
   return (
-    <article onClick={goToProductPage} className="product-card">
+    <article className="product-card">
       <div className="prduct-card__img-container">
         <img src={image} alt={imgAlt} />
       </div>
+      <div className="product-card__top-decoration"></div>
       <div className="product-card__details">
+        <div className="product-card__bottom-decoration"></div>
         <h5>{title}</h5>
         <span className="product-card__price">{price}</span>
         <DoubleCTA>
-          <IonButton><IonIcon slot="start" icon={open} />View</IonButton>
-          <IonButton><IonIcon slot="start" icon={cart} />Buy</IonButton>
+          <IonButton color="light"><IonIcon slot="start" color="primary" icon={open} />View</IonButton>
+          <IonButton color="light"><IonIcon slot="start" color="primary" icon={cart} />Buy</IonButton>
         </DoubleCTA>
       </div>
     </article>

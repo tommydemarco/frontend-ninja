@@ -1,5 +1,3 @@
-import { useHistory } from "react-router-dom"
-
 import "./CategoryCard.scss";
 
 interface CategoryCardProps {

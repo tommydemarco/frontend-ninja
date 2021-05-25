@@ -7,6 +7,7 @@ import {
   IonToolbar,
   IonButtons,
   IonMenuButton,
+  useIonViewWillEnter,
 } from '@ionic/react';
 
 import ContentConteiner from "../components/ContentContainer"
@@ -16,6 +17,7 @@ import {productData} from "../data/product-data"
 
 const Deals: React.FC = () => {
   const [ products, setProducts ] = useState<any>({})
+  const [ updateSignal, setUpdateSignal ] = useState({})
 
   useEffect(() => {
     // const getProducts = async () => {
@@ -26,8 +28,12 @@ const Deals: React.FC = () => {
     // getProducts()
     setTimeout(() => {
       setProducts(productData)
-    }, 7000)
+    },7)
   }, [])
+
+  useIonViewWillEnter(() => {
+    setUpdateSignal({})
+  })
 
   return (
     <IonPage>
@@ -41,9 +47,9 @@ const Deals: React.FC = () => {
       </IonHeader>
       <IonContent fullscreen>   
         <ContentConteiner> 
-            <ProductSlider title="Developer Mugs" products={products.mugs} />
-            <ProductSlider title="Developer Mugs" products={products.hoodies} />
-            <ProductSlider title="Developer Mugs" products={products.mugs} />
+            <ProductSlider title="Developer Mugs" products={products.mugs} updateSignal={updateSignal} />
+            <ProductSlider title="Developer Mugs" products={products.hoodies} updateSignal={updateSignal} />
+            <ProductSlider title="Developer Mugs" products={products.mugs} updateSignal={updateSignal} />
         </ContentConteiner>
       </IonContent>
     </IonPage>
