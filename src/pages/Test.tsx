@@ -1,5 +1,4 @@
-import { IonButtons, IonContent, IonHeader, IonIcon, IonMenuButton, IonPage, IonTitle, IonToolbar } from "@ionic/react";
-import { arrowBack } from "ionicons/icons"
+import { IonBackButton, IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from "@ionic/react";
 
 import AuthModule from "../components/AuthModule";
 import ContentContainer from "../components/ContentContainer";
@@ -14,8 +13,10 @@ const Login: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar color="primary">
-          <IonButtons>
-            <IonIcon icon={arrowBack} onClick={onBackButtonClick}/>
+          <IonButtons slot="start" onClick={onBackButtonClick}>
+            <div onClick={() => console.log("helooo")}>
+              <IonBackButton />
+            </div>
           </IonButtons>
           <IonTitle>Title</IonTitle>
           <IonButtons slot="end">
