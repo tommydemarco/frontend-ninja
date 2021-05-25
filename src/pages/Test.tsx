@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import { useHistory } from "react-router-dom"
 import { 
   IonBackButton, 
@@ -9,7 +9,10 @@ import {
   IonPage, 
   IonTitle, 
   IonToolbar,
-  useIonViewDidLeave } from "@ionic/react";
+  useIonViewDidLeave, 
+  useIonViewWillLeave} from "@ionic/react";
+
+import { appContext, APP_ACTION_TYPES } from "../context/app"
 
 import BlurredLayer from "../components/BlurredLayer";
 import ContentContainer from "../components/ContentContainer";
@@ -21,15 +24,22 @@ import { test } from "../data/test-data"
 
 const Login: React.FC = () => {
 
+  const { appDispatch } = useContext(appContext)!
+
   const history = useHistory()
 
   const [ testCountdown, setTestCountdown ] = useState(true)
   
   useEffect(() => {
+    appDispatch({ type: APP_ACTION_TYPES.SET_BOTTOM_NAVIGATION, payload: false })
     setTimeout(() => {
       setTestCountdown(false)
     }, 300000000)
-  }, [])
+  }, [appDispatch])
+
+  useIonViewWillLeave(() => {
+    appDispatch({ type: APP_ACTION_TYPES.SET_BOTTOM_NAVIGATION, payload: true })
+  })
 
   useIonViewDidLeave(() => {
     history.replace(history.location)

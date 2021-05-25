@@ -52,7 +52,7 @@ import './theme/variables.css';
 
 const App: React.FC = () => {
 
-  const { state } = useContext(appContext)!
+  const { appState } = useContext(appContext)!
 
   return (
     <IonApp>
@@ -93,7 +93,7 @@ const App: React.FC = () => {
               </IonTabBar> 
           </IonTabs>
         </IonReactRouter>
-        {state.showTabNavigation === false && 
+        {appState.showTabNavigation === false && 
           (<style>
             {`ion-tab-bar { display: none }`}
           </style>)

@@ -11,8 +11,8 @@ interface Action {
 }
 
 export interface AppContextValue {
-    state: AppState;
-    dispatch: React.Dispatch<Action>;
+    appState: AppState;
+    appDispatch: React.Dispatch<Action>;
 }
 
 export const APP_ACTION_TYPES = {
@@ -37,8 +37,8 @@ const appReducer = (appState: AppState, action: Action): AppState => {
 
 const AppContext: React.FC<React.ReactNode> = ({ children }) => {
 
-    const [state, dispatch] = useReducer(appReducer, appInitialState)
-    const appContextValue = { state, dispatch } 
+    const [appState, appDispatch] = useReducer(appReducer, appInitialState)
+    const appContextValue = { appState, appDispatch } 
 
     return (
         <appContext.Provider value={appContextValue}>
