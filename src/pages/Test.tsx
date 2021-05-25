@@ -13,7 +13,7 @@ import {
 
 import ContentContainer from "../components/ContentContainer";
 import TestCountdown from "../components/TestCountdown";
-import Timer from "../components/Timer"
+import Timer from "../components/Timer";
 
 const Login: React.FC = () => {
 
