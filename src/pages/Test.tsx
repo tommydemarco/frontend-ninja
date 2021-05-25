@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { useHistory } from "react-router-dom"
 import { 
   IonBackButton, 
   IonButtons, 
@@ -8,12 +9,14 @@ import {
   IonPage, 
   IonTitle, 
   IonToolbar,
-  useIonViewWillLeave } from "@ionic/react";
+  useIonViewDidLeave } from "@ionic/react";
 
 import ContentContainer from "../components/ContentContainer";
 import TestCountdown from "../components/TestCountdown";
 
 const Login: React.FC = () => {
+
+  const history = useHistory()
 
   const [ testCountdown, setTestCountdown ] = useState(true)
   
@@ -23,8 +26,8 @@ const Login: React.FC = () => {
     // }, 3000)
   }, [])
 
-  useIonViewWillLeave(() => {
-    
+  useIonViewDidLeave(() => {
+    //history.replace(history.location)
   })
 
   return (
