@@ -1,7 +1,7 @@
 export const test = [
   {
     id: "all-1",
-    question: "Lorem ipsum dolor sit amet",
+    question: "Lorem ipsum dolor sit amet consecutur dolor",
     code: "",
     answers: [
       {

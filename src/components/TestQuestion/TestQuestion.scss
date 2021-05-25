@@ -1,7 +1,15 @@
 .test-question {
-  max-width: calc(100% - 40px);
-
   &__question {
     color: var(--color-gray-dark);
+    max-width: calc(100% - 75px);
+  }
+
+  &__answers {
+    position: absolute {
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+    }
   }
 }

@@ -13,7 +13,10 @@ import {
 
 import ContentContainer from "../components/ContentContainer";
 import TestCountdown from "../components/TestCountdown";
+import TestQuestion from "../components/TestQuestion";
 import Timer from "../components/Timer";
+
+import { test } from "../data/test-data"
 
 const Login: React.FC = () => {
 
@@ -30,6 +33,15 @@ const Login: React.FC = () => {
   useIonViewDidLeave(() => {
     history.replace(history.location)
   })
+
+  //const mixedTestQuestions = 
+
+  const [ questionNumber, setQuestionNumber ] = useState(0)
+  const [ currentQuestion, setCurrentQuestion ] = useState(test[questionNumber])
+
+  useEffect(() => {
+    setCurrentQuestion(test[questionNumber])
+  }, [questionNumber])
 
   return (
     <IonPage>
@@ -50,6 +62,7 @@ const Login: React.FC = () => {
         <ContentContainer>
           <Timer timer={20} />
           <TestCountdown isOpen={testCountdown} setTestCountdown={setTestCountdown}/>
+          <TestQuestion {...currentQuestion} />
         </ContentContainer>
       </IonContent>
     </IonPage>
