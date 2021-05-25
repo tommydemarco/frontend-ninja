@@ -8,9 +8,10 @@ import "./StarterPrompt.scss"
 interface StarterPromptProps {
   active: boolean;
   setPrompt: React.Dispatch<React.SetStateAction<boolean>>;
+  actionCall: () => void
 }
 
-const StarterPrompt: React.FC<StarterPromptProps> = ({ active, setPrompt }) => {
+const StarterPrompt: React.FC<StarterPromptProps> = ({ active, setPrompt, actionCall }) => {
 
   const [seniorDifficulty, setSeniorDifficulty] = useState(false)
 
@@ -39,7 +40,7 @@ const StarterPrompt: React.FC<StarterPromptProps> = ({ active, setPrompt }) => {
           <IonButton onClick={() => setPrompt(false)} className="ion-activatable ripple-parent" fill="outline" expand="block">
             Go Back
           </IonButton>
-          <IonButton className="ion-activatable ripple-parent" expand="block">
+          <IonButton className="ion-activatable ripple-parent" expand="block" onClick={actionCall}>
             Start
           </IonButton>
         </DoubleCTA>

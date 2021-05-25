@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, useHistory } from "react-router-dom"
 import { IonContent, IonHeader, IonPage, IonIcon, IonTitle, IonMenuButton, IonToolbar, IonButtons, IonBackButton } from '@ionic/react';
 
 import ContentContainer from "../components/ContentContainer"
@@ -11,10 +11,16 @@ import { modesCategory, ModeCategories } from "../data/modes-categories"
 
 const Tab3: React.FC = (props) => {
   const { modeSlug } = useParams<{ modeSlug: string }>()
+  const history = useHistory()
   
   const title = modeSlug.replace("-", " ")
 
   const [ promptActive, setPromptActive ] = useState(false)
+  const [ categoryPath, setCategoryPath ] = useState<string | null>(null)
+
+  const goToTest = () => {
+    history.push(modeSlug + "/" + categoryPath)
+  }
 
   //@ts-ignore
   const categories = modesCategory[modeSlug]
@@ -38,13 +44,19 @@ const Tab3: React.FC = (props) => {
           <FlexContainer>
             {categories?.map((item: ModeCategories) => {
               return (
-                <CategoryCard setPrompt={setPromptActive} path={item.path} key={item.path} label={item.category}>
+                <CategoryCard 
+                  setPrompt={setPromptActive} 
+                  path={item.path} 
+                  key={item.path} 
+                  label={item.category}
+                  setCategoryPath={setCategoryPath}
+                >
                     <IonIcon icon={item.icon} />
                 </CategoryCard>
               )
             })}
           </FlexContainer>
-          <StarterPrompt active={promptActive} setPrompt={setPromptActive} />
+          <StarterPrompt active={promptActive} setPrompt={setPromptActive} actionCall={goToTest} />
         </ContentContainer>
       </IonContent>
     </IonPage>   

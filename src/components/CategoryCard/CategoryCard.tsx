@@ -7,16 +7,14 @@ interface CategoryCardProps {
   label: string;
   path: string;
   setPrompt: React.Dispatch<React.SetStateAction<boolean>>;
+  setCategoryPath: React.Dispatch<React.SetStateAction<string | null>>;
 }
 
-const CategoryCard: React.FC<CategoryCardProps> = ({ setPrompt, children, label, path }) => {
-
-  const history = useHistory()
+const CategoryCard: React.FC<CategoryCardProps> = ({ setPrompt, children, label, path, setCategoryPath }) => {
 
   const handleClick = () => {
-    //add the prompt showing logic
     setPrompt(true);
-    //history.push(path)
+    setCategoryPath(path)
   }
 
   const classes = ["category-card"]
