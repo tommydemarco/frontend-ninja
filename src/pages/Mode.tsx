@@ -19,7 +19,7 @@ const Tab3: React.FC = (props) => {
   const [ categoryPath, setCategoryPath ] = useState<string | null>(null)
 
   const goToTest = () => {
-    history.push(modeSlug + "/" + categoryPath)
+    history.push("/mode/" + modeSlug + "/" + categoryPath)
   }
 
   //@ts-ignore

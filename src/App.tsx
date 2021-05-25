@@ -23,6 +23,7 @@ import Logout from "./pages/Logout";
 import Legal from "./pages/Legal";
 import Deals from "./pages/Deals";
 import Trophies from "./pages/Trophies";
+import Test from "./pages/Test";
 
 // components
 import SideMenu from "./components/SideMenu"
@@ -66,7 +67,8 @@ const App: React.FC = () => {
               <Route path="/charts"><Charts /></Route>
               <Route path="/deals"><Deals /></Route>
               <Route path="/profile"><Profile /></Route>
-              <Route path="/mode/:modeSlug"><Mode /></Route>
+              <Route exact path="/mode/:modeSlug"><Mode /></Route>
+              <Route path="/mode/:modeSlug/:categorySlug"><Test /></Route>
               <Route path="/trophies"><Trophies /></Route>
               <Route exact path="/"><Redirect to="/home" /></Route>
               <Route><Profile /></Route>
