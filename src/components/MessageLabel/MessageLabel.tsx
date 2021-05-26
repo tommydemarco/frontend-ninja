@@ -3,7 +3,7 @@ import React from "react";
 import "./MessageLabel.scss";
 
 interface MessageLabelProps {
-  color?: string;
+  color: "success" | "warning" | "error";
   children: React.ReactNode;
   icon?: string;
 }
@@ -11,6 +11,7 @@ interface MessageLabelProps {
 const MessageLabel: React.FC<MessageLabelProps> = ({ children, color, icon }) => {
 
   const classes = ["message-label"]
+  classes.push("message-label--" + color)
 
   return (
     <div className={classes.join(" ")}>

@@ -1,10 +1,11 @@
 import { useState } from "react"
-import { IonButton, IonInput, IonItem, IonLabel, IonList, IonSpinner, IonIcon } from "@ionic/react";
-import { logIn } from "ionicons/icons"
+import { IonButton, IonInput, IonItem, IonLabel, IonList, IonIcon } from "@ionic/react";
+import { logIn, medkit } from "ionicons/icons";
 
 import { auth } from "../../firebase"
 
-import LoadingSpinner from "../LoadingSpinner"
+import LoadingSpinner from "../LoadingSpinner";
+import MessageLabel from "../MessageLabel";
 import ProviderLogin from "../ProviderLogin";
 
 import "./LoginForm.scss";
@@ -36,9 +37,11 @@ const LoginForm: React.FC<LoginFormProps> = ({ performLoginWithEmailAndPassword 
     <div className="login-form">
       <ProviderLogin />
       <div className="login-form__form">
-        {error && <IonLabel className="ion-padding" color="warning">
-          We got some trouble logging you in, please try again later
-        </IonLabel>}
+        {error && (
+          <MessageLabel color="warning" icon={medkit}>
+            We got some trouble logging you in, please try again later
+          </MessageLabel>
+        )}
         <IonList>
           <IonItem>
             <IonLabel position="fixed">Email</IonLabel>
