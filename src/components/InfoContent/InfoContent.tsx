@@ -24,7 +24,7 @@ const InfoContent: React.FC<InfoContentProps> = ({ children, title, subtitle, bu
         </span>  
         {buttonText && buttonLink && (
           <div className="info-content__cta-container">
-            <IonButton href={buttonLink}>
+            <IonButton routerLink={buttonLink}>
               {buttonText}
             </IonButton>
           </div>

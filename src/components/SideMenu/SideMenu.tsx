@@ -1,3 +1,4 @@
+import { useHistory } from "react-router-dom";
 import {
   IonContent,
   IonIcon,
@@ -9,14 +10,26 @@ import {
   IonTitle,
   IonToolbar,
 } from '@ionic/react';
-
-import { logOut, documentText, lockClosed, barChart, codeSlash, megaphone, heartCircle, logIn } from "ionicons/icons"
+import { logOut, documentText, lockClosed, barChart, codeSlash, megaphone, heartCircle, logIn } from "ionicons/icons";
+import { auth } from "../../firebase"
 
 import ContentContainer from "../ContentContainer";
 
 import "./SideMenu.scss"
 
 const SideMenu = () => {
+
+  const history = useHistory();
+
+  const logUserOut = async () => {
+    try {
+      await auth.signOut()
+    } catch(e) {
+      console.log(e)
+    }
+    history.push("/logout")
+  }
+
   return (
     <IonMenu contentId="main" className="side-menu">
       <IonToolbar color="primary">
@@ -26,7 +39,7 @@ const SideMenu = () => {
         <ContentContainer className="side-menu__content">
           <IonList>
             <IonMenuToggle>
-              <IonItem button routerLink="/logout">
+              <IonItem onClick={logUserOut} >
                 <IonIcon slot="start" icon={logOut} color="primary" />
                 <IonLabel>Logout</IonLabel>
               </IonItem>

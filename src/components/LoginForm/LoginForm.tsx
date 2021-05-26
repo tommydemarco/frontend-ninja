@@ -1,12 +1,11 @@
-import { useState } from "react"
-import { IonButton, IonInput, IonItem, IonLabel, IonList, IonIcon } from "@ionic/react";
+import { useState } from "react";
+import { useHistory } from "react-router-dom";
+import { IonButton, IonInput, IonItem, IonLabel, IonList, IonIcon, IonLoading } from "@ionic/react";
 import { logIn, medkit } from "ionicons/icons";
 
 import { auth } from "../../firebase"
 
-import LoadingSpinner from "../LoadingSpinner";
 import MessageLabel from "../MessageLabel";
-import ProviderLogin from "../ProviderLogin";
 
 import "./LoginForm.scss";
 
@@ -16,26 +15,29 @@ interface LoginFormProps {
 
 const LoginForm: React.FC<LoginFormProps> = ({ performLoginWithEmailAndPassword }) => {
 
+  const history = useHistory()
+
   const [ email, setEmail ] = useState("")
   const [ password, setPassword ] = useState("")
-  const [ error, setError ] = useState(true)
-  const [ loading, setLoading ] = useState(true)
+  const [ error, setError ] = useState(false)
+  const [ loading, setLoading ] = useState(false)
 
   const onLogin = async () => {
     if (email === "" || password === "") return
     try {
       setError(false);
       setLoading(true)
-      const credentials = await auth.signInWithEmailAndPassword(email, password)
+      await auth.signInWithEmailAndPassword(email, password)
+      history.replace("/")
     } catch(e) {
-      setLoading(true)
+      setLoading(false);
       setError(true)
     }
   }
 
   return (
     <div className="login-form">
-      <ProviderLogin />
+      <IonLoading isOpen={loading} message="Logging you in..." />
       <div className="login-form__form">
         {error && (
           <MessageLabel color="warning" icon={medkit}>
@@ -56,10 +58,8 @@ const LoginForm: React.FC<LoginFormProps> = ({ performLoginWithEmailAndPassword 
           </IonItem>
         </IonList>
         <IonButton onClick={onLogin}>
-          Login 
-          {loading ? 
-            <LoadingSpinner color="light" slot="end" small={true} /> 
-            : <IonIcon icon={logIn} slot="end" />}
+          <IonIcon icon={logIn} slot="start" />
+          Login
         </IonButton>
       </div>
     </div>

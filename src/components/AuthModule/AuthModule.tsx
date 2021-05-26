@@ -4,7 +4,8 @@ import { useState } from "react"
 
 import LoginForm from "../LoginForm";
 import InfoContent from "../InfoContent";
-import RegisterForm from "../RegisterForm"
+import RegisterForm from "../RegisterForm";
+import ProviderLogin from "../ProviderLogin";
 
 import "./AuthModule.scss"
 
@@ -16,11 +17,12 @@ const AuthModule = () => {
       <div className="auth-module__intro">
         <InfoContent 
           title="Greetings!"
-          subtitle="Log in or register to use all the functionaloties of the app"
+          subtitle="Sign in with Google, login or register to use all the functionaloties of the app"
         >
           <IonIcon icon={balloon} color="primary" />
         </InfoContent>
       </div>
+      <ProviderLogin />
       <IonSegment onIonChange={e => setMode(e.detail.value!)} value={mode}>
         <IonSegmentButton value="login">
           <IonLabel>Login</IonLabel>

@@ -1,8 +1,6 @@
 import { useState } from "react"
 import { IonButton, IonInput, IonItem, IonLabel, IonList } from "@ionic/react";
 
-import ProviderLogin from "../ProviderLogin";
-
 import "./RegisterForm.scss";
 
 interface RegisterFormProps {
@@ -22,7 +20,6 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ performRegisterWithEmailAnd
 
   return (
     <div className="register-form">
-      <ProviderLogin />
       <div className="register-form__form">
         <IonList>
           <IonItem>

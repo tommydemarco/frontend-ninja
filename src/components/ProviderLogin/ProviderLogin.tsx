@@ -5,7 +5,7 @@ const ProviderLogin = () => {
   return (
     <IonButton expand="block" color="primary">
       <IonIcon icon={logoGoogle} slot="start" />
-      Login with Google
+      Sign in with Google
     </IonButton>
   )
 }
