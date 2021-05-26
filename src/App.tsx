@@ -74,9 +74,7 @@ const App: React.FC = () => {
           <IonTabs>
             <IonRouterOutlet id="main">
               <Route path="/legal/:page"><Legal /></Route>
-              <Route path="/login" render={() => {
-                return appState.userId ? <Home /> : <Login />;
-              }} />
+              <Route path="/login" render={() => appState.userId ? <Home /> : <Login />} />
               <Route path="/logout"><Logout /></Route>
               <Route path="/home"><Home /></Route>
               <Route path="/charts"><Charts /></Route>
