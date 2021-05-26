@@ -1,5 +1,6 @@
 import { useState } from "react"
-import { IonButton, IonInput, IonItem, IonLabel, IonList } from "@ionic/react";
+import { IonButton, IonIcon, IonInput, IonItem, IonLabel, IonList } from "@ionic/react";
+import { personAdd } from "ionicons/icons"
 
 import "./RegisterForm.scss";
 
@@ -39,6 +40,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ performRegisterWithEmailAnd
           </IonItem>
         </IonList>
         <IonButton onClick={onRegister}>
+          <IonIcon icon={personAdd} slot="start" />
           Register
         </IonButton>
       </div>

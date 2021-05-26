@@ -17,12 +17,12 @@ const AuthModule = () => {
       <div className="auth-module__intro">
         <InfoContent 
           title="Greetings!"
-          subtitle="Sign in with Google, login or register to use all the functionaloties of the app"
+          subtitle="Sign in with Google or login/register with email and password to use all the functionaloties of the app"
         >
           <IonIcon icon={balloon} color="primary" />
         </InfoContent>
+        <ProviderLogin />
       </div>
-      <ProviderLogin />
       <IonSegment onIonChange={e => setMode(e.detail.value!)} value={mode}>
         <IonSegmentButton value="login">
           <IonLabel>Login</IonLabel>

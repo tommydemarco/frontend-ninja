@@ -28,7 +28,8 @@ const LoginForm: React.FC<LoginFormProps> = ({ performLoginWithEmailAndPassword 
       setError(false);
       setLoading(true)
       await auth.signInWithEmailAndPassword(email, password)
-      history.replace("/")
+      setLoading(false)
+      history.push("/home")
     } catch(e) {
       setLoading(false);
       setError(true)

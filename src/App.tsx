@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { Redirect, Route } from 'react-router-dom';
 import {
   IonApp,
@@ -11,8 +11,11 @@ import {
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { statsChartOutline, gridOutline, personOutline, diamondOutline } from 'ionicons/icons';
+
+import { auth } from "./firebase";
+
 // context
-import { appContext } from "./context/app";
+import { appContext, APP_ACTION_TYPES } from "./context/app";
 // pages
 import Home from './pages/Home';
 import Charts from './pages/Charts';
@@ -52,7 +55,17 @@ import './theme/variables.css';
 
 const App: React.FC = () => {
 
-  const { appState } = useContext(appContext)!
+  const { appState, appDispatch } = useContext(appContext)!
+
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      if(user === null) {
+        appDispatch({ type: APP_ACTION_TYPES.SET_USER_ID, payload: null })
+      } else {
+        appDispatch({ type: APP_ACTION_TYPES.SET_USER_ID, payload: user.uid })
+      }
+    })
+  }, [appDispatch])
 
   return (
     <IonApp>
@@ -61,7 +74,9 @@ const App: React.FC = () => {
           <IonTabs>
             <IonRouterOutlet id="main">
               <Route path="/legal/:page"><Legal /></Route>
-              <Route path="/login"><Login /></Route>
+              <Route path="/login" render={() => {
+                return appState.userId ? <Home /> : <Login />;
+              }} />
               <Route path="/logout"><Logout /></Route>
               <Route path="/home"><Home /></Route>
               <Route path="/charts"><Charts /></Route>

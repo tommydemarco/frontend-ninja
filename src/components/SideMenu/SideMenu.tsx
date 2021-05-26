@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import {
   IonContent,
@@ -10,14 +11,18 @@ import {
   IonTitle,
   IonToolbar,
 } from '@ionic/react';
-import { logOut, documentText, lockClosed, barChart, codeSlash, megaphone, heartCircle, logIn } from "ionicons/icons";
-import { auth } from "../../firebase"
+import { logOut, cog, documentText, lockClosed, barChart, codeSlash, megaphone, heartCircle, logIn } from "ionicons/icons";
+import { auth } from "../../firebase";
+
+import { appContext } from "../../context/app";
 
 import ContentContainer from "../ContentContainer";
 
-import "./SideMenu.scss"
+import "./SideMenu.scss";
 
 const SideMenu = () => {
+
+  const { appState } = useContext(appContext)!
 
   const history = useHistory();
 
@@ -38,18 +43,28 @@ const SideMenu = () => {
       <IonContent fullscreen>
         <ContentContainer className="side-menu__content">
           <IonList>
+          {appState.userId ? 
             <IonMenuToggle>
               <IonItem onClick={logUserOut} >
                 <IonIcon slot="start" icon={logOut} color="primary" />
                 <IonLabel>Logout</IonLabel>
               </IonItem>
-            </IonMenuToggle> 
+            </IonMenuToggle> : 
             <IonMenuToggle>
               <IonItem button routerLink="/login">
                 <IonIcon slot="start" icon={logIn} color="primary" />
                 <IonLabel>Login</IonLabel>
               </IonItem>
-            </IonMenuToggle> 
+            </IonMenuToggle>
+          }
+          {appState.userId &&
+            <IonMenuToggle>
+              <IonItem button routerLink="/settings">
+                <IonIcon slot="start" icon={cog} color="primary" />
+                <IonLabel>Settings</IonLabel>
+              </IonItem>
+            </IonMenuToggle>
+          }
             <IonMenuToggle>
               <IonItem button routerLink="/logout">
                 <IonIcon slot="start" icon={barChart} color="primary" />
