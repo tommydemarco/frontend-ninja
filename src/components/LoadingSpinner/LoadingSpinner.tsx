@@ -5,16 +5,19 @@ import "./LoadingSpinner.scss"
 interface LoadingSpinnerProps {
   color?: string;
   centered?: boolean; 
+  small?: boolean;
+  slot?: string;
 }
 
-const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({ color, centered }) => {
+const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({ color, centered, small, slot }) => {
 
   const classes = ["loading-spinner"]
   if (centered) classes.push("loading-spinner--centered")
+  if (small) classes.push("loading-spinner--small")
   
   return (
     <div className={classes.join(" ")}>
-      <IonSpinner color={color || "primary"} />
+      <IonSpinner slot={slot ? slot : "start"} color={color || "primary"} />
     </div>
   )
 }

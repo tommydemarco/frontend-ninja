@@ -44,7 +44,6 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ title, products, updateSi
     <div className="product-slider">
         <h3 className="product-slider__title">{title}</h3>
         <Swiper
-          loop={true}
           spaceBetween={20}
           slidesPerView={1}
           

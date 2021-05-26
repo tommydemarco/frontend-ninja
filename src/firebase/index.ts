@@ -1,5 +1,5 @@
 import firebase from 'firebase/app';
-import "forebase/auth";
+import "firebase/auth";
 
 import { firebaseConfig } from "./config"
 
