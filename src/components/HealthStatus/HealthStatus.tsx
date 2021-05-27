@@ -11,9 +11,9 @@ const HealthStatus = () => {
   const { appState } = useContext(appContext)!
 
   return (
-    <IonButton>
+    <IonButton className="health-status">
         {appState.health}
-        <IonIcon icon={heart} color="danger" />
+        <IonIcon icon={heart} color="danger" size="medium" />
     </IonButton>
   )
 }

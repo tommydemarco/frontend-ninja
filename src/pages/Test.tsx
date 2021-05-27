@@ -18,6 +18,7 @@ import { appContext, APP_ACTION_TYPES } from "../context/app"
 
 import BlurredLayer from "../components/BlurredLayer";
 import ContentContainer from "../components/ContentContainer";
+import HealthStatus from "../components/HealthStatus";
 import TestCountdown from "../components/TestCountdown";
 import TestQuestion from "../components/TestQuestion";
 import Timer from "../components/Timer";
@@ -82,6 +83,7 @@ const Login: React.FC = () => {
             </IonButtons>
             <IonTitle>Title</IonTitle>
             <IonButtons slot="end">
+              <HealthStatus />
               <IonMenuButton />
             </IonButtons>
           </IonToolbar>
