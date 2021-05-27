@@ -8,6 +8,7 @@ import {
   IonHeader, 
   IonIcon, 
   IonMenuButton, 
+  IonModal, 
   IonPage, 
   IonTitle, 
   IonToolbar,
@@ -18,6 +19,7 @@ import { appContext, APP_ACTION_TYPES } from "../context/app"
 
 import BlurredLayer from "../components/BlurredLayer";
 import ContentContainer from "../components/ContentContainer";
+import HealthModal from "../components/HealthModal";
 import HealthStatus from "../components/HealthStatus";
 import TestCountdown from "../components/TestCountdown";
 import TestQuestion from "../components/TestQuestion";
@@ -73,6 +75,7 @@ const Login: React.FC = () => {
           { text: "yes, go back", role: "confirm", handler: () => history.goBack() }
         ]}
       />
+      <HealthModal />
       <IonPage>
         <IonHeader>
           <IonToolbar color="primary">

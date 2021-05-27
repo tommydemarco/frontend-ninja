@@ -4,6 +4,7 @@ interface AppState {
     userId: null | string;
     showTabNavigation: boolean;
     health: number;
+    helathModalOpen: boolean;
 }
 
 interface Action {
@@ -18,13 +19,15 @@ export interface AppContextValue {
 
 export const APP_ACTION_TYPES = {
     SET_BOTTOM_NAVIGATION: "SET_BOTTOM_NAVIGATION",
-    SET_USER_ID: "SET_USER_ID"
+    SET_USER_ID: "SET_USER_ID",
+    SET_HEALTH_MODAL: "SET_HEALTH_MODAL",
 }
 
 const appInitialState: AppState = {
     userId: null,
     showTabNavigation: true,
     health: 5,
+    helathModalOpen: false,
 }
 
 const appContext = createContext<AppContextValue | null>(null)
@@ -35,6 +38,8 @@ const appReducer = (appState: AppState, action: Action): AppState => {
         return { ...appState, showTabNavigation: action.payload }
     case APP_ACTION_TYPES.SET_USER_ID: 
         return { ...appState, userId: action.payload }
+    case APP_ACTION_TYPES.SET_HEALTH_MODAL: 
+        return { ...appState, helathModalOpen: action.payload }
     default:
         return appState
     }
