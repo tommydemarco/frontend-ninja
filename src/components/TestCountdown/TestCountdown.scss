@@ -14,6 +14,7 @@
       top: -8px;
       animation-name: timer-bar;
       animation-duration: 5s;
+      will-change: width;
     }
   }
 }

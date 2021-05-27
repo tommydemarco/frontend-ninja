@@ -44,12 +44,8 @@ const Login: React.FC = () => {
     }, 300000000)
   }, [appDispatch])
 
-  useIonViewWillLeave(() => {
-    appDispatch({ type: APP_ACTION_TYPES.SET_BOTTOM_NAVIGATION, payload: true })
-  })
-
   useIonViewDidLeave(() => {
-    //
+    appDispatch({ type: APP_ACTION_TYPES.SET_BOTTOM_NAVIGATION, payload: true })
   })
 
   const confirmExitTest = () => {
