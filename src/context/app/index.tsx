@@ -3,6 +3,7 @@ import React, { createContext, useReducer } from "react";
 interface AppState {
     userId: null | string;
     showTabNavigation: boolean;
+    health: number;
 }
 
 interface Action {
@@ -22,7 +23,8 @@ export const APP_ACTION_TYPES = {
 
 const appInitialState: AppState = {
     userId: null,
-    showTabNavigation: true
+    showTabNavigation: true,
+    health: 5,
 }
 
 const appContext = createContext<AppContextValue | null>(null)

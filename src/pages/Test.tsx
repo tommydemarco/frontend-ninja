@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from "react"
 import { useHistory } from "react-router-dom"
 import { 
   IonAlert,
-  IonBackButton, 
   IonButton, 
   IonButtons, 
   IonContent, 
