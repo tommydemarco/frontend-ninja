@@ -9,15 +9,15 @@ const Settings = () => {
       <h3 className="settings__title">Settings</h3>
       <IonList>
         <IonItem>
-          <IonIcon icon={timer} color="primary" slot="start" size="large" />
+          <IonIcon icon={timer} color="primary" slot="start" />
           <IonLabel>Timer</IonLabel>
           <IonLabel  slot="end" className="settings__switch">
             Switch
           </IonLabel>
         </IonItem>
         <IonItem>
-          <IonIcon icon={timer} color="primary" slot="start" size="large" />
-          <IonLabel>Anonymus Profile</IonLabel>
+          <IonIcon icon={timer} color="primary" slot="start" />
+          <IonLabel>Anonymus</IonLabel>
           <IonLabel slot="end" className="settings__switch">
             Switch
           </IonLabel>

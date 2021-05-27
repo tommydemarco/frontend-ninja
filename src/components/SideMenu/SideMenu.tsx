@@ -11,7 +11,7 @@ import {
   IonTitle,
   IonToolbar,
 } from '@ionic/react';
-import { logOut, cog, documentText, lockClosed, barChart, codeSlash, megaphone, heartCircle, logIn } from "ionicons/icons";
+import { logOut, grid, documentText, lockClosed, barChart, codeSlash, megaphone, heartCircle, logIn } from "ionicons/icons";
 import { auth } from "../../firebase";
 
 import { appContext } from "../../context/app";
@@ -57,14 +57,12 @@ const SideMenu = () => {
               </IonItem>
             </IonMenuToggle>
           }
-          {appState.userId &&
             <IonMenuToggle>
-              <IonItem button routerLink="/settings">
-                <IonIcon slot="start" icon={cog} color="primary" />
-                <IonLabel>Settings</IonLabel>
+              <IonItem button routerLink="/home">
+                <IonIcon slot="start" icon={grid} color="primary" />
+                <IonLabel>Home</IonLabel>
               </IonItem>
             </IonMenuToggle>
-          }
             <IonMenuToggle>
               <IonItem button routerLink="/logout">
                 <IonIcon slot="start" icon={barChart} color="primary" />

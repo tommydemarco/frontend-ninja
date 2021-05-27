@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { IonButton, IonInput, IonItem, IonLabel, IonList, IonIcon, IonLoading } from "@ionic/react";
+import { IonButton, IonInput, IonItem, IonLabel, IonList, IonIcon, IonLoading, useIonViewWillLeave } from "@ionic/react";
 import { logIn, medkit } from "ionicons/icons";
 
 import { auth } from "../../firebase"
@@ -29,7 +29,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ performLoginWithEmailAndPassword 
       setLoading(true)
       await auth.signInWithEmailAndPassword(email, password)
       setLoading(false)
-      history.push("/home")
+      history.replace("/home")
     } catch(e) {
       setLoading(false);
       setError(true)

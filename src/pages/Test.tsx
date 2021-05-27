@@ -1,10 +1,13 @@
-import { useState, useEffect, useContext } from "react"
+import React, { useState, useEffect, useContext } from "react"
 import { useHistory } from "react-router-dom"
 import { 
+  IonAlert,
   IonBackButton, 
+  IonButton, 
   IonButtons, 
   IonContent, 
   IonHeader, 
+  IonIcon, 
   IonMenuButton, 
   IonPage, 
   IonTitle, 
@@ -21,6 +24,7 @@ import TestQuestion from "../components/TestQuestion";
 import Timer from "../components/Timer";
 
 import { test } from "../data/test-data"
+import { arrowBack } from "ionicons/icons";
 
 const Login: React.FC = () => {
 
@@ -29,6 +33,7 @@ const Login: React.FC = () => {
   const history = useHistory()
 
   const [ testCountdown, setTestCountdown ] = useState(true)
+  const [ backAlert, setBackAlert ] = useState(false)
   
   useEffect(() => {
     appDispatch({ type: APP_ACTION_TYPES.SET_BOTTOM_NAVIGATION, payload: false })
@@ -45,7 +50,9 @@ const Login: React.FC = () => {
     //
   })
 
-  //const mixedTestQuestions = 
+  const confirmExitTest = () => {
+    setBackAlert(true)
+  }
 
   const [ questionNumber, setQuestionNumber ] = useState(0)
   const [ currentQuestion, setCurrentQuestion ] = useState(test[questionNumber])
@@ -55,29 +62,41 @@ const Login: React.FC = () => {
   }, [questionNumber])
 
   return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar color="primary">
-          <IonButtons slot="start">
-            <div onClick={() => console.log("helooo")}>
-              <IonBackButton />
-            </div>
-          </IonButtons>
-          <IonTitle>Title</IonTitle>
-          <IonButtons slot="end">
-            <IonMenuButton />
-          </IonButtons>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent>
-        <ContentContainer>
-          <BlurredLayer active={testCountdown} />
-          <Timer timer={20} />
-          <TestCountdown isOpen={testCountdown} setTestCountdown={setTestCountdown}/>
-          <TestQuestion {...currentQuestion} />
-        </ContentContainer>
-      </IonContent>
-    </IonPage>
+    <React.Fragment>
+      <IonAlert 
+        isOpen={backAlert}
+        header="Go back?"
+        message="If you go back now the test will be invalid
+                and the results will not be saved"
+        buttons={[
+          { text: "cancel", role: "cancel", handler: () => setBackAlert(false)},
+          { text: "yes, go back", role: "confirm", handler: () => history.goBack() }
+        ]}
+      />
+      <IonPage>
+        <IonHeader>
+          <IonToolbar color="primary">
+            <IonButtons slot="start">
+              <IonButton  onClick={confirmExitTest}>
+                <IonIcon icon={arrowBack} slot="icon-only" />
+              </IonButton>
+            </IonButtons>
+            <IonTitle>Title</IonTitle>
+            <IonButtons slot="end">
+              <IonMenuButton />
+            </IonButtons>
+          </IonToolbar>
+        </IonHeader>
+        <IonContent>
+          <ContentContainer>
+            <BlurredLayer active={testCountdown} />
+            <Timer timer={20} />
+            <TestCountdown isOpen={testCountdown} setTestCountdown={setTestCountdown}/>
+            <TestQuestion {...currentQuestion} />
+          </ContentContainer>
+        </IonContent>
+      </IonPage>
+    </React.Fragment>
   )
 }
 
