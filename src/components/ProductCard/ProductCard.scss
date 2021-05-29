@@ -5,9 +5,7 @@
   overflow: hidden;
   box-shadow: -1px 1px 15px 5px rgba(0, 0, 0, 0.1);
   min-height: 280px;
-  background-color: var(--color-black-light);
   padding: 0;
-  border: 3px solid var(--color-black-light);
   position: relative;
 
   &__top-decoration,
@@ -21,11 +19,17 @@
     right: 0;
     background-color: var(--color-black-light);
     transform-origin: 0 0;
-    transform: rotate(-4deg);
+    transform: rotate(-5deg);
+  }
+
+  &__bottom-decoration {
+    top: 10px;
+    z-index: -1;
   }
 
   &__img-container {
     max-width: 100%;
+    z-index: -2;
 
     img {
       width: 100%;

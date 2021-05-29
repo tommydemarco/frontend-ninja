@@ -1,9 +1,13 @@
 .content-container {
-    padding: 25px 20px;
-    display: flex;
-    flex-direction: column;
+  padding: 25px 20px;
+  display: flex;
+  flex-direction: column;
 
-    &--text-center {
-        text-align: center;
-    }
+  &--text-center {
+    text-align: center;
+  }
+
+  &--no-padding {
+    padding: 0;
+  }
 }

@@ -12,13 +12,11 @@ import {
   IonPage, 
   IonTitle, 
   IonToolbar,
-  useIonViewDidLeave, 
-  useIonViewWillLeave} from "@ionic/react";
+  useIonViewDidLeave } from "@ionic/react";
 
 import { appContext, APP_ACTION_TYPES } from "../context/app"
 
 import BlurredLayer from "../components/BlurredLayer";
-import ContentContainer from "../components/ContentContainer";
 import HealthModal from "../components/HealthModal";
 import HealthStatus from "../components/HealthStatus";
 import TestCountdown from "../components/TestCountdown";
@@ -27,6 +25,8 @@ import Timer from "../components/Timer";
 
 import { test } from "../data/test-data"
 import { arrowBack } from "ionicons/icons";
+import ContentContainer from "../components/ContentContainer";
+import QuestionContainer from "../components/QuestionContainer";
 
 const Login: React.FC = () => {
 
@@ -87,13 +87,18 @@ const Login: React.FC = () => {
             </IonButtons>
           </IonToolbar>
         </IonHeader>
-        <IonContent>
-          <ContentContainer>
+        <IonContent fullscreen>
+          <QuestionContainer>
             <BlurredLayer active={testCountdown} />
             <Timer timer={20} />
             <TestCountdown isOpen={testCountdown} setTestCountdown={setTestCountdown}/>
-            <TestQuestion {...currentQuestion} />
-          </ContentContainer>
+            <TestQuestion 
+              question={currentQuestion.question}
+              code={currentQuestion.code}
+              language={currentQuestion.language}
+              answers={currentQuestion.answers}
+            />
+          </QuestionContainer>
         </IonContent>
       </IonPage>
     </React.Fragment>

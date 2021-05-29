@@ -1,16 +1,31 @@
 .test-question {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 100%;
+
   &__question {
+    padding: 20px;
     color: var(--color-gray-dark);
     max-width: calc(100% - 75px);
   }
 
+  &__code {
+    overflow: scroll;
+    padding: 0 20px;
+
+    pre {
+      margin-top: 0;
+    }
+  }
+
   &__answers {
     padding: 20px;
-    position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     width: 100%;
+    background-color: var(--color-white);
     box-shadow: -1px 1px 15px 5px rgba(0, 0, 0, 0.1);
   }
 

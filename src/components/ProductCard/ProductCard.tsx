@@ -23,7 +23,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ title, url, price, image, img
 
   return (
     <article className="product-card">
-      <div className="prduct-card__img-container">
+      <div className="product-card__img-container">
         <img src={image} alt={imgAlt} />
       </div>
       <div className="product-card__top-decoration"></div>
