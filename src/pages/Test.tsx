@@ -25,7 +25,6 @@ import Timer from "../components/Timer";
 
 import { test } from "../data/test-data"
 import { arrowBack } from "ionicons/icons";
-import ContentContainer from "../components/ContentContainer";
 import QuestionContainer from "../components/QuestionContainer";
 
 const Login: React.FC = () => {
