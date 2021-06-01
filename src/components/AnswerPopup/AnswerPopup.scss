@@ -1,9 +1,15 @@
 .answer-popup {
-  position: absolute;
+  position: fixed;
+  top: 50%;
+  left: 50%;
   opacity: 1;
   pointer-events: none;
   transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
   align-items: center;
+
+  ion-icon {
+    font-size: 90px;
+  }
 }

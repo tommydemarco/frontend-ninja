@@ -23,10 +23,13 @@ import TestQuestion from "../components/TestQuestion";
 import Timer from "../components/Timer";
 
 import { test } from "../data/test-data"
-import { arrowBack } from "ionicons/icons";
+import { arrowBack, checkmarkCircle } from "ionicons/icons";
+
+import AnswerPopup from "../components/AnswerPopup";
 import QuestionContainer from "../components/QuestionContainer";
 
-const Login: React.FC = () => {
+
+const Test: React.FC = () => {
 
   const { appDispatch } = useContext(appContext)!
 
@@ -109,10 +112,13 @@ const Login: React.FC = () => {
               onClickAnswer={onClickAnswer}
             />
           </QuestionContainer>
+          <AnswerPopup className={answerPopup.isCorrect !== null ? "active" : "inactive" }>
+            <IonIcon icon={checkmarkCircle} color="success" />
+          </AnswerPopup>
         </IonContent>
       </IonPage>
     </React.Fragment>
   )
 }
 
-export default Login;
+export default Test;
