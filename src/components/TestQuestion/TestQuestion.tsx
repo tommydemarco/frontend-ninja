@@ -10,7 +10,8 @@ interface TestQuestionProps {
   question: string;
   code: string;
   language: string;
-  answers: Answer[]
+  answers: Answer[];
+  onClickAnswer: (correct: boolean) => void;
 }
 
 interface Answer {
@@ -18,12 +19,9 @@ interface Answer {
   correct: boolean
 }
 
-const TestQuestion: React.FC<TestQuestionProps> = ({ question, code, answers, language }) => {
+const TestQuestion: React.FC<TestQuestionProps> = ({ question, code, answers, language, onClickAnswer }) => {
 
   const mixedAnswers = answers;
-  const onClickAnswer = (correct: boolean) => {
-    console.log("clicked answer", correct)
-  }
 
   return (
     <div className="test-question">

@@ -8,7 +8,6 @@ import {
   IonHeader, 
   IonIcon, 
   IonMenuButton, 
-  IonModal, 
   IonPage, 
   IonTitle, 
   IonToolbar,
@@ -33,14 +32,28 @@ const Login: React.FC = () => {
 
   const history = useHistory()
 
+  const [ answerPopup, setAnswerPopup ] = useState<{ isCorrect: boolean | null }>({ isCorrect: null })
+  const [ timer, setTimer ] = useState(20)
   const [ testCountdown, setTestCountdown ] = useState(true)
   const [ backAlert, setBackAlert ] = useState(false)
-  
+  const [ questionNumber, setQuestionNumber ] = useState(0)
+  const [ currentQuestion, setCurrentQuestion ] = useState(test[questionNumber])
+
+  const onClickAnswer = (isCorrect: boolean) => {
+    if (isCorrect === true) setAnswerPopup({ isCorrect: true })
+    else setAnswerPopup({ isCorrect: false })
+  }
+
+  useEffect(() => {
+    if(answerPopup.isCorrect === null) return;
+    setTimeout(() => setAnswerPopup({ isCorrect: null }), 900)
+  }, [answerPopup])
+ 
   useEffect(() => {
     appDispatch({ type: APP_ACTION_TYPES.SET_BOTTOM_NAVIGATION, payload: false })
     setTimeout(() => {
       setTestCountdown(false)
-    }, 300000000)
+    }, 5000)
   }, [appDispatch])
 
   useIonViewDidLeave(() => {
@@ -50,9 +63,6 @@ const Login: React.FC = () => {
   const confirmExitTest = () => {
     setBackAlert(true)
   }
-
-  const [ questionNumber, setQuestionNumber ] = useState(0)
-  const [ currentQuestion, setCurrentQuestion ] = useState(test[questionNumber])
 
   useEffect(() => {
     setCurrentQuestion(test[questionNumber])
@@ -89,13 +99,14 @@ const Login: React.FC = () => {
         <IonContent fullscreen>
           <QuestionContainer>
             <BlurredLayer active={testCountdown} />
-            <Timer timer={20} />
+            <Timer timer={timer} />
             <TestCountdown isOpen={testCountdown} setTestCountdown={setTestCountdown}/>
             <TestQuestion 
               question={currentQuestion.question}
               code={currentQuestion.code}
               language={currentQuestion.language}
               answers={currentQuestion.answers}
+              onClickAnswer={onClickAnswer}
             />
           </QuestionContainer>
         </IonContent>

@@ -16,6 +16,11 @@
     border-radius: 100%;
     z-index: 99;
     padding: 10px;
+    text-align: center;
+    height: 42px;
+    width: 42px;
+    overflow: visible;
+    white-space: nowrap;
   }
 
   .hold {
@@ -77,7 +82,7 @@
     -moz-animation: right 1s linear;
     animation: right 20s linear infinite;
     -webkit-animation-delay: 20s;
-    -moz-animation-delay: 20s;
+    -moz-animation-delay: 10s;
     animation-delay: 20s;
   }
   @keyframes right {
