@@ -1,0 +1,9 @@
+.answer-popup {
+  position: absolute;
+  opacity: 1;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
