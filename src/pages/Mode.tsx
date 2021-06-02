@@ -1,6 +1,8 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import { useParams, useHistory } from "react-router-dom"
 import { IonContent, IonHeader, IonPage, IonIcon, IonTitle, IonMenuButton, IonToolbar, IonButtons, IonBackButton, useIonViewDidLeave } from '@ionic/react';
+
+import { appContext, APP_ACTION_TYPES } from "../context/app";
 
 import ContentContainer from "../components/ContentContainer"
 import FlexContainer from "../components/FlexContainer";
@@ -8,8 +10,11 @@ import CategoryCard from "../components/CategoryCard";
 import StarterPrompt from "../components/StarterPrompt";
 
 import { modesCategory, ModeCategories } from "../data/modes-categories"
+import { app } from "../firebase";
 
 const Tab3: React.FC = (props) => {
+
+  const { appDispatch } = useContext(appContext)!
   const { modeSlug } = useParams<{ modeSlug: string }>()
   const history = useHistory()
   
@@ -19,6 +24,7 @@ const Tab3: React.FC = (props) => {
   const [ categoryPath, setCategoryPath ] = useState<string | null>(null)
 
   const goToTest = () => {
+    appDispatch({ type: APP_ACTION_TYPES.SET_LOADING_ALERT, payload: true })
     history.push("/mode/" + modeSlug + "/" + categoryPath)
   }
 

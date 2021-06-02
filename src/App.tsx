@@ -1,6 +1,7 @@
 import { useContext, useEffect } from "react"
 import { Redirect, Route } from 'react-router-dom';
 import {
+  IonAlert,
   IonApp,
   IonIcon,
   IonLabel,
@@ -106,6 +107,10 @@ const App: React.FC = () => {
               </IonTabBar> 
           </IonTabs>
         </IonReactRouter>
+        <IonAlert 
+          isOpen={appState.loadingAlertOpen}
+          message="Your test is being loaded..."
+        />
         {appState.showTabNavigation === false && 
           (<style>
             {`ion-tab-bar { display: none }`}
