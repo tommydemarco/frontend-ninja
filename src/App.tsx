@@ -109,7 +109,7 @@ const App: React.FC = () => {
         </IonReactRouter>
         <IonAlert 
           isOpen={appState.loadingAlertOpen}
-          message="Your test is being loaded..."
+          message="<h5>Loading your test...</h5>"
         />
         {appState.showTabNavigation === false && 
           (<style>

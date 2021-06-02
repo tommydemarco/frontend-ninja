@@ -11,7 +11,8 @@ import {
   IonPage, 
   IonTitle, 
   IonToolbar,
-  useIonViewDidLeave } from "@ionic/react";
+  useIonViewDidLeave, 
+  useIonViewWillEnter} from "@ionic/react";
 
 import { appContext, APP_ACTION_TYPES } from "../context/app"
 
@@ -70,6 +71,10 @@ const Test: React.FC = () => {
   useEffect(() => {
     setCurrentQuestion(test[questionNumber])
   }, [questionNumber])
+
+  useIonViewWillEnter(() => {
+    appDispatch({ type: APP_ACTION_TYPES.SET_LOADING_ALERT, payload: false })
+  })
 
   return (
     <React.Fragment>

@@ -25,7 +25,9 @@ const Tab3: React.FC = (props) => {
 
   const goToTest = () => {
     appDispatch({ type: APP_ACTION_TYPES.SET_LOADING_ALERT, payload: true })
-    history.push("/mode/" + modeSlug + "/" + categoryPath)
+    setTimeout(() => {
+      history.push("/mode/" + modeSlug + "/" + categoryPath)
+    }, 600)
   }
 
   useIonViewDidLeave(() => {
