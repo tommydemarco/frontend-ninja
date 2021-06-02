@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react"
+import React, { useState, useEffect, useContext, useCallback } from "react"
 import { useHistory } from "react-router-dom"
 import { 
   IonAlert,
@@ -36,7 +36,11 @@ const Test: React.FC = () => {
 
   const history = useHistory()
 
-  const [ answerPopup, setAnswerPopup ] = useState<{ isCorrect: boolean | null }>({ isCorrect: null })
+  const [ testData, setTestData ] = useState({
+    correctQuestions: 0,
+    timeAccumulated: 0
+  })
+
   const [ timer, setTimer ] = useState(20)
   const [ testCountdown, setTestCountdown ] = useState(true)
   const [ backAlert, setBackAlert ] = useState(false)
@@ -48,6 +52,18 @@ const Test: React.FC = () => {
     else setAnswerPopup({ isCorrect: false })
   }
 
+  /** CHANGE QUESTION */
+  const changeQuestion = () => {
+    // add change question logic
+  }
+
+  /** START TEST */
+  useEffect(() => {
+    
+  }, [testCountdown])
+
+  /** ANSWER POPUP LOGIC */
+  const [ answerPopup, setAnswerPopup ] = useState<{ isCorrect: boolean | null }>({ isCorrect: null })
   useEffect(() => {
     if(answerPopup.isCorrect === null) return;
     setTimeout(() => setAnswerPopup({ isCorrect: null }), 900)

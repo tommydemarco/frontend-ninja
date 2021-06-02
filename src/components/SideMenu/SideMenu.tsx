@@ -11,7 +11,7 @@ import {
   IonTitle,
   IonToolbar,
 } from '@ionic/react';
-import { logOut, grid, documentText, lockClosed, barChart, codeSlash, megaphone, heartCircle, logIn } from "ionicons/icons";
+import { logOut, grid, documentText, lockClosed, barChart, codeSlash, megaphone, heartCircle, logIn, bagHandle } from "ionicons/icons";
 import { auth } from "../../firebase";
 
 import { appContext } from "../../context/app";
@@ -77,8 +77,8 @@ const SideMenu = () => {
             </IonMenuToggle>
             <IonMenuToggle>
               <IonItem button routerLink="/logout">
-                <IonIcon slot="start" icon={megaphone} color="primary" />
-                <IonLabel>Ask for feature</IonLabel>
+                <IonIcon slot="start" icon={bagHandle} color="primary" />
+                <IonLabel>Dev Merchandise</IonLabel>
               </IonItem>
             </IonMenuToggle>
             <IonMenuToggle>
