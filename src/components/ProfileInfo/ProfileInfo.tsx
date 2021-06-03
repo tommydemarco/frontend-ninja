@@ -1,4 +1,4 @@
-import { IonCol, IonGrid, IonRow, IonButton } from "@ionic/react";
+import { IonCol, IonGrid, IonRow } from "@ionic/react";
 import React from "react";
 import "./ProfileInfo.scss"
 
@@ -7,7 +7,7 @@ interface ProfileInfoProps {
   imageAlt: string;
   username: string;
   description: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 const ProfileInfo: React.FC<ProfileInfoProps> = ({ imageSrc, imageAlt, username, description, children }) => {
