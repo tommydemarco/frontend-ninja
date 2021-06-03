@@ -1,6 +1,6 @@
 import { useState, useContext } from "react"
 import { useParams, useHistory } from "react-router-dom"
-import { IonContent, IonHeader, IonPage, IonIcon, IonTitle, IonMenuButton, IonToolbar, IonButtons, IonBackButton, useIonViewWillLeave } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonIcon, IonTitle, IonMenuButton, IonToolbar, IonButtons, IonBackButton, useIonViewDidLeave } from '@ionic/react';
 
 import { appContext, APP_ACTION_TYPES } from "../context/app";
 
@@ -30,7 +30,7 @@ const Tab3: React.FC = (props) => {
     }, 600)
   }
 
-  useIonViewWillLeave(() => {
+  useIonViewDidLeave(() => {
     setPromptActive(false)
   })
 

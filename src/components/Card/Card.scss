@@ -1,6 +1,15 @@
 .card {
   box-shadow: -1px 1px 15px 5px rgba(0, 0, 0, 0.1);
-  padding: 20px;
   border-radius: 5px;
   margin-bottom: 25px;
+  overflow: hidden;
+
+  &__content {
+    padding: 20px;
+  }
+
+  &__footer {
+    padding: 15px;
+    background-color: var(--color-black-light);
+  }
 }
