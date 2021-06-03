@@ -21,6 +21,10 @@ ion-button {
   font-size: 15px;
 }
 
+.ion-page {
+  justify-content: flex-start;
+}
+
 .app-tabs--disabled {
   display: none;
 }
