@@ -16,6 +16,11 @@ ion-segment {
   background: var(--color-white);
 }
 
+ion-button {
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+}
+
 .app-tabs--disabled {
   display: none;
 }

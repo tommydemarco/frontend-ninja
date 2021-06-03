@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react"
-import { Redirect, Route } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import {
   IonAlert,
   IonApp,
@@ -75,7 +75,6 @@ const App: React.FC = () => {
           <IonTabs>
             <IonRouterOutlet id="main">
               <Route path="/legal/:page"><Legal /></Route>
-              <Route path="/login"><Login /></Route>
               <Route path="/logout"><Logout /></Route>
               <Route path="/home"><Home /></Route>
               <Route path="/charts"><Charts /></Route>
