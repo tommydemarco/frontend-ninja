@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { 
   IonButton, 
   IonButtons, 
@@ -10,6 +10,8 @@ import {
   IonTitle, 
   IonToolbar } from "@ionic/react";
 import { close } from "ionicons/icons";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper.scss';
 
 import ContentContainer from "../ContentContainer";
 import DoubleCTA from "../ContentContainer";
@@ -24,6 +26,11 @@ interface EditAvatarModalProps {
 const EditAvatarModal: React.FC<EditAvatarModalProps> = ({ isOpen, setIsOpen }) => {
 
   const [ avatar, setAvatar ] = useState<string[]>([]);
+  const [ swiper, setSwiper ] = useState<any>(null);
+
+  useEffect(() => {
+    if (swiper !== null) swiper.update() 
+  }, [swiper])
 
   const saveChanges = () => {
     //add logic to save changes
@@ -45,6 +52,9 @@ const EditAvatarModal: React.FC<EditAvatarModalProps> = ({ isOpen, setIsOpen }) 
       </IonHeader>
       <ContentContainer>
         <h3>Select your new avatar!</h3>
+        <Swiper spaceBetween={20} slidesPerView={1} onSwiper={(swiper => setSwiper(swiper))}>
+
+        </Swiper>
         <IonRow className="ion-padding-top ion-no-margin">
           <IonCol size="12">
             <DoubleCTA>
