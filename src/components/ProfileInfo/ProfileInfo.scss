@@ -1,8 +1,28 @@
 .profile-info {
+  &__initial-info {
+    margin-bottom: 10px;
+  }
+
+  &__image-container {
+    position: relative;
+  }
+
   &__image {
     border-radius: 100%;
     display: block;
     border: 5px solid var(--color-black-light);
+    background-color: var(--color-black-light);
+  }
+
+  &__edit-avatar {
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    height: 42px;
+
+    ion-icon {
+      margin: 0;
+    }
   }
 
   &__data {

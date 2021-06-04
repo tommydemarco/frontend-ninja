@@ -1,4 +1,5 @@
-import { IonCol, IonGrid, IonRow } from "@ionic/react";
+import { IonButton, IonCol, IonGrid, IonIcon, IonRow } from "@ionic/react";
+import { create } from "ionicons/icons";
 import React from "react";
 import "./ProfileInfo.scss"
 
@@ -14,9 +15,12 @@ const ProfileInfo: React.FC<ProfileInfoProps> = ({ imageSrc, imageAlt, username,
   return (
     <div className="profile-info">
       <IonGrid>
-        <IonRow>
-          <IonCol size="6">
+        <IonRow className="profile-info__initial-info">
+          <IonCol size="6" className="profile-info__image-container">
             <img src={imageSrc} alt={imageAlt} className="profile-info__image" />
+            <IonButton className="profile-info__edit-avatar">
+              <IonIcon icon={create} slot="icon-only" />
+            </IonButton>
           </IonCol>  
           <IonCol size="6" className="profile-info__data">
             <h3 className="profile-info__username">
