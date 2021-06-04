@@ -16,12 +16,18 @@
 
   &__edit-avatar {
     position: absolute;
-    bottom: -8px;
+    bottom: -10px;
     left: 0;
     height: 42px;
+    height: 46px;
+    width: 46px;
 
     ion-icon {
       margin: 0;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 55%;
     }
   }
 
