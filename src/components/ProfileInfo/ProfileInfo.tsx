@@ -25,7 +25,10 @@ const ProfileInfo: React.FC<ProfileInfoProps> = ({ imageSrc, imageAlt, username,
           <IonRow className="profile-info__initial-info">
             <IonCol size="6" className="profile-info__image-container">
               <img src={imageSrc} alt={imageAlt} className="profile-info__image" />
-              <IonButton className="profile-info__edit-avatar">
+              <IonButton 
+                className="profile-info__edit-avatar"
+                onClick={() => setEditAvatarOpen(true)}
+              >
                 <IonIcon icon={create} slot="icon-only" />
               </IonButton>
             </IonCol>  

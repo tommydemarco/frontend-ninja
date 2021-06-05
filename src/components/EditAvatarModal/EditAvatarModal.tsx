@@ -14,9 +14,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper.scss';
 
 import ContentContainer from "../ContentContainer";
-import DoubleCTA from "../ContentContainer";
+import DoubleCTA from "../DoubleCTA";
 
-import "./EditAvatartProfileModal.scss";
+import "./EditAvatarModal.scss";
 
 interface EditAvatarModalProps {
   isOpen: boolean;
