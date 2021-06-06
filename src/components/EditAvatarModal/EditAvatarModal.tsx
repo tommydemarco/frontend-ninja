@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { 
   IonButton, 
   IonButtons, 
@@ -8,7 +8,7 @@ import {
   IonRow,
   IonCol,
   IonTitle, 
-  IonToolbar } from "@ionic/react";
+  IonToolbar, } from "@ionic/react";
 import { close } from "ionicons/icons";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper.scss';
@@ -21,23 +21,36 @@ import "./EditAvatarModal.scss";
 interface EditAvatarModalProps {
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
+  pageWidth: number;
 }
 
-const EditAvatarModal: React.FC<EditAvatarModalProps> = ({ isOpen, setIsOpen }) => {
+const avatarArray = [...new Array(40)].map((_, index)=> index + 1);
+
+const EditAvatarModal: React.FC<EditAvatarModalProps> = ({ isOpen, setIsOpen, pageWidth }) => {
+
+  const modalRef = useRef<HTMLIonModalElement | null>(null)
 
   const [ avatar, setAvatar ] = useState<string[]>([]);
   const [ swiper, setSwiper ] = useState<any>(null);
+  const [ sliderPresent, setSliderPresent ] = useState(false);
+
+  const addSlider = () => {
+    setTimeout(() => setSliderPresent(true), 20)
+  }
 
   useEffect(() => {
-    if (swiper !== null) swiper.update() 
-  }, [swiper])
+    window.addEventListener("ionModalWillPresent", addSlider)
+    return () => {
+      window.removeEventListener("ionModalWillPresent", addSlider)
+    }
+  })
 
   const saveChanges = () => {
     //add logic to save changes
   }
 
   return (
-    <IonModal isOpen={isOpen}>
+    <IonModal isOpen={isOpen} ref={modalRef} cssClass="edit-avatar-modal">
       <IonHeader>
         <IonToolbar color="primary">
           <IonTitle>
@@ -52,9 +65,26 @@ const EditAvatarModal: React.FC<EditAvatarModalProps> = ({ isOpen, setIsOpen }) 
       </IonHeader>
       <ContentContainer>
         <h3>Select your new avatar!</h3>
-        <Swiper spaceBetween={20} slidesPerView={1} onSwiper={(swiper => setSwiper(swiper))}>
-
-        </Swiper>
+        {sliderPresent && (<Swiper 
+          className="edit-avatar-modal__slider" 
+          spaceBetween={20} 
+          slidesPerView={2}
+          slidesPerColumnFill={"row"} 
+          slidesPerColumn={window.innerHeight > 680 ? 3 : 2} 
+          onSwiper={(swiper => setSwiper(swiper))}
+        >
+          {avatarArray.map(avatarNumber => {
+            return (
+              <SwiperSlide key={avatarNumber} className="edit-avatar-modal__slide">
+                <img 
+                  src={"/assets/avatars/" + avatarNumber + ".png"} 
+                  alt={"Avatar number" + avatarNumber}
+                  className="edit-avatar-modal__image"
+                />
+              </SwiperSlide>
+            )
+          })}
+        </Swiper>)}
         <IonRow className="ion-padding-top ion-no-margin">
           <IonCol size="12">
             <DoubleCTA>

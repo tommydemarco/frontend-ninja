@@ -1,0 +1,24 @@
+.edit-avatar-modal {
+  width: 100%;
+  height: 100%;
+  display: flex !important;
+
+  &__slider {
+    margin-top: 30px;
+    max-width: 100%;
+    position: static;
+    overflow: visible;
+    width: 85%;
+  }
+
+  &__slide {
+    height: auto;
+  }
+
+  &__image {
+    border-radius: 100%;
+    display: block;
+    border: 5px solid var(--color-black-light);
+    background-color: var(--color-black-light);
+  }
+}

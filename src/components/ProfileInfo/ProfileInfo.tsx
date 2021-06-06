@@ -17,6 +17,7 @@ interface ProfileInfoProps {
 const ProfileInfo: React.FC<ProfileInfoProps> = ({ imageSrc, imageAlt, username, description, children }) => {
 
   const [ editAvatarOpen, setEditAvatarOpen ] = useState(false)
+  const [ pageWidth, setPageWidth ] = useState(window.innerWidth)
 
   return (
     <React.Fragment>
@@ -46,7 +47,11 @@ const ProfileInfo: React.FC<ProfileInfoProps> = ({ imageSrc, imageAlt, username,
           </IonRow>
         </IonGrid>   
       </div>
-      <EditAvatarModal isOpen={editAvatarOpen} setIsOpen={() => setEditAvatarOpen(false)} />
+      <EditAvatarModal 
+        isOpen={editAvatarOpen} 
+        setIsOpen={() => setEditAvatarOpen(false)}
+        pageWidth={pageWidth}
+      />
     </React.Fragment>
   )
 }
