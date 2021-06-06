@@ -2,7 +2,8 @@ import { useHistory } from "react-router-dom"
 import { IonButtons, IonHeader, IonButton, IonIcon, IonPage, IonTitle, IonToolbar } from "@ionic/react";
 import { close } from "ionicons/icons";
 
-import ContentContainer from "../components/ContentContainer"
+import ContentContainer from "../components/ContentContainer";
+import EditAvatarSlider from "../components/EditAvatarSlider";
 
 const EditAvatar = () => {
 
@@ -25,7 +26,7 @@ const EditAvatar = () => {
         </IonToolbar>
       </IonHeader>
       <ContentContainer>
-        
+        <EditAvatarSlider goBack={goBack} />
       </ContentContainer>
     </IonPage>
   )

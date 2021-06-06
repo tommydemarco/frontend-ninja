@@ -21,6 +21,7 @@ import { appContext, APP_ACTION_TYPES } from "./context/app";
 import Home from './pages/Home';
 import Charts from './pages/Charts';
 import Profile from './pages/Profile';
+import EditAvatar from './pages/EditAvatar';
 import Mode from './pages/Mode';
 import Login from "./pages/Login";
 import Logout from "./pages/Logout";
@@ -75,11 +76,13 @@ const App: React.FC = () => {
           <IonTabs>
             <IonRouterOutlet id="main">
               <Route path="/legal/:page"><Legal /></Route>
+              <Route path="/login"><Login /></Route>
               <Route path="/logout"><Logout /></Route>
               <Route path="/home"><Home /></Route>
               <Route path="/charts"><Charts /></Route>
               <Route path="/deals"><Deals /></Route>
               <Route path="/profile"><Profile /></Route>
+              <Route path="/edit-avatar"><EditAvatar /></Route>
               <Route path="/trophies"><Trophies /></Route>
               <Route exact path="/mode/:modeSlug"><Mode /></Route>
               <Route path="/mode/:modeSlug/:categorySlug"><Test /></Route>

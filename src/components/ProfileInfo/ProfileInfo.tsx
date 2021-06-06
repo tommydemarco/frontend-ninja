@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { IonButton, IonCol, IonGrid, IonIcon, IonRow } from "@ionic/react";
 import { create } from "ionicons/icons";
 
-import EditAvatarModal from "../EditAvatarModal";
-
 import "./ProfileInfo.scss";
 
 interface ProfileInfoProps {
@@ -16,9 +14,6 @@ interface ProfileInfoProps {
 
 const ProfileInfo: React.FC<ProfileInfoProps> = ({ imageSrc, imageAlt, username, description, children }) => {
 
-  const [ editAvatarOpen, setEditAvatarOpen ] = useState(false)
-  const [ pageWidth, setPageWidth ] = useState(window.innerWidth)
-
   return (
     <React.Fragment>
       <div className="profile-info">
@@ -28,7 +23,7 @@ const ProfileInfo: React.FC<ProfileInfoProps> = ({ imageSrc, imageAlt, username,
               <img src={imageSrc} alt={imageAlt} className="profile-info__image" />
               <IonButton 
                 className="profile-info__edit-avatar"
-                onClick={() => setEditAvatarOpen(true)}
+                routerLink="/edit-avatar"
               >
                 <IonIcon icon={create} slot="icon-only" />
               </IonButton>
@@ -47,11 +42,6 @@ const ProfileInfo: React.FC<ProfileInfoProps> = ({ imageSrc, imageAlt, username,
           </IonRow>
         </IonGrid>   
       </div>
-      <EditAvatarModal 
-        isOpen={editAvatarOpen} 
-        setIsOpen={() => setEditAvatarOpen(false)}
-        pageWidth={pageWidth}
-      />
     </React.Fragment>
   )
 }
